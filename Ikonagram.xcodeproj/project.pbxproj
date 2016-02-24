@@ -25,6 +25,12 @@
 		63C69DFC1C7D872F00556765 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69DFB1C7D872F00556765 /* SignUpView.swift */; };
 		63C69DFE1C7D874000556765 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69DFD1C7D873F00556765 /* SettingsView.swift */; };
 		63C69E001C7D874F00556765 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69DFF1C7D874F00556765 /* ResetPasswordView.swift */; };
+		63C69E021C7E171000556765 /* frontPostcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69E011C7E171000556765 /* frontPostcard.swift */; };
+		63C69E041C7E178200556765 /* backPostcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69E031C7E178200556765 /* backPostcard.swift */; };
+		63C69E061C7E17A400556765 /* selectContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69E051C7E17A400556765 /* selectContacts.swift */; };
+		63C69E081C7E17B300556765 /* addContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69E071C7E17B300556765 /* addContacts.swift */; };
+		63C69E0A1C7E17F800556765 /* summaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69E091C7E17F800556765 /* summaryView.swift */; };
+		63C69E0E1C7E217E00556765 /* configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69E0D1C7E217E00556765 /* configs.swift */; };
 		7AAE1E7FB22DD079FCF3110B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5ACA696C21988213E0B690 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +40,7 @@
 		63C69DD21C7D039800556765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63C69DD41C7D039800556765 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		63C69DD71C7D039800556765 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		63C69DD91C7D039800556765 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63C69DD91C7D039800556765 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Ikonagram/Assets.xcassets; sourceTree = "<group>"; };
 		63C69DDC1C7D039800556765 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63C69DDE1C7D039800556765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63C69DE41C7D68D500556765 /* LoginSlides.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSlides.swift; sourceTree = "<group>"; };
@@ -50,6 +56,12 @@
 		63C69DFB1C7D872F00556765 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		63C69DFD1C7D873F00556765 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		63C69DFF1C7D874F00556765 /* ResetPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		63C69E011C7E171000556765 /* frontPostcard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = frontPostcard.swift; sourceTree = "<group>"; };
+		63C69E031C7E178200556765 /* backPostcard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = backPostcard.swift; sourceTree = "<group>"; };
+		63C69E051C7E17A400556765 /* selectContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectContacts.swift; sourceTree = "<group>"; };
+		63C69E071C7E17B300556765 /* addContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addContacts.swift; sourceTree = "<group>"; };
+		63C69E091C7E17F800556765 /* summaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = summaryView.swift; sourceTree = "<group>"; };
+		63C69E0D1C7E217E00556765 /* configs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = configs.swift; sourceTree = "<group>"; };
 		9F5ACA696C21988213E0B690 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2FC4DE6426A004E04E573B4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				63C69DD11C7D039800556765 /* Ikonagram */,
+				63C69DD91C7D039800556765 /* Assets.xcassets */,
 				63C69DD01C7D039800556765 /* Products */,
 				63C69DEC1C7D7FDF00556765 /* Frameworks */,
 				8E145D6256F2D5F037503717 /* Pods */,
@@ -96,14 +109,15 @@
 			isa = PBXGroup;
 			children = (
 				63C69DD21C7D039800556765 /* AppDelegate.swift */,
-				63C69DD41C7D039800556765 /* SplashView.swift */,
+				63C69E011C7E171000556765 /* frontPostcard.swift */,
+				63C69E0D1C7E217E00556765 /* configs.swift */,
+				63C69E031C7E178200556765 /* backPostcard.swift */,
+				63C69E051C7E17A400556765 /* selectContacts.swift */,
+				63C69E071C7E17B300556765 /* addContacts.swift */,
+				63C69E091C7E17F800556765 /* summaryView.swift */,
+				63C69E0B1C7E181A00556765 /* SplashViews */,
+				63C69E0C1C7E197000556765 /* LoginManagement */,
 				63C69DD61C7D039800556765 /* Main.storyboard */,
-				63C69DF91C7D871F00556765 /* LogInView.swift */,
-				63C69DFB1C7D872F00556765 /* SignUpView.swift */,
-				63C69DFD1C7D873F00556765 /* SettingsView.swift */,
-				63C69DFF1C7D874F00556765 /* ResetPasswordView.swift */,
-				63C69DE41C7D68D500556765 /* LoginSlides.swift */,
-				63C69DD91C7D039800556765 /* Assets.xcassets */,
 				63C69DDB1C7D039800556765 /* LaunchScreen.storyboard */,
 				63C69DDE1C7D039800556765 /* Info.plist */,
 			);
@@ -124,6 +138,26 @@
 				9F5ACA696C21988213E0B690 /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63C69E0B1C7E181A00556765 /* SplashViews */ = {
+			isa = PBXGroup;
+			children = (
+				63C69DD41C7D039800556765 /* SplashView.swift */,
+				63C69DE41C7D68D500556765 /* LoginSlides.swift */,
+			);
+			name = SplashViews;
+			sourceTree = "<group>";
+		};
+		63C69E0C1C7E197000556765 /* LoginManagement */ = {
+			isa = PBXGroup;
+			children = (
+				63C69DF91C7D871F00556765 /* LogInView.swift */,
+				63C69DFB1C7D872F00556765 /* SignUpView.swift */,
+				63C69DFD1C7D873F00556765 /* SettingsView.swift */,
+				63C69DFF1C7D874F00556765 /* ResetPasswordView.swift */,
+			);
+			name = LoginManagement;
 			sourceTree = "<group>";
 		};
 		8E145D6256F2D5F037503717 /* Pods */ = {
@@ -259,11 +293,17 @@
 			files = (
 				63C69DD51C7D039800556765 /* SplashView.swift in Sources */,
 				63C69DFC1C7D872F00556765 /* SignUpView.swift in Sources */,
+				63C69E081C7E17B300556765 /* addContacts.swift in Sources */,
 				63C69DE51C7D68D500556765 /* LoginSlides.swift in Sources */,
+				63C69E0E1C7E217E00556765 /* configs.swift in Sources */,
 				63C69E001C7D874F00556765 /* ResetPasswordView.swift in Sources */,
+				63C69E041C7E178200556765 /* backPostcard.swift in Sources */,
 				63C69DFE1C7D874000556765 /* SettingsView.swift in Sources */,
 				63C69DFA1C7D871F00556765 /* LogInView.swift in Sources */,
 				63C69DD31C7D039800556765 /* AppDelegate.swift in Sources */,
+				63C69E0A1C7E17F800556765 /* summaryView.swift in Sources */,
+				63C69E061C7E17A400556765 /* selectContacts.swift in Sources */,
+				63C69E021C7E171000556765 /* frontPostcard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
