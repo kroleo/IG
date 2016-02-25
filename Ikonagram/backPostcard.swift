@@ -6,30 +6,46 @@
 //  Copyright © 2016 Kroleo Studios. All rights reserved.
 //
 
+
 import UIKit
-
-class backPostcard: UIViewController {
-
+var final_text: String!
+class backPostcard: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var scrollview: UIScrollView!
+    @IBOutlet weak var edit: UITextField!
+    
+    @IBOutlet weak var message: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        self.edit.delegate = self;
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func editor(sender: UITextField) {
+        self.message.text = sender.text
     }
-    */
-
+    
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        scrollview.setContentOffset(CGPointMake(0, 200), animated: true)
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        scrollview.setContentOffset(CGPointMake(0, 0), animated: true)
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func toStep3(sender: UIButton) {
+        final_text = self.message.text
+    }
+    
+    
 }

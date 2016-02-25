@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ThreeImagesView" customModule="Ikonagram" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YpA-Nh-a60" customClass="CustomeScrollView" customModule="Ikonagram" customModuleProvider="target">
+                    <rect key="frame" x="10" y="10" width="286" height="582"/>
+                    <color key="backgroundColor" red="0.77201704550000005" green="0.77201704550000005" blue="0.77201704550000005" alpha="1" colorSpace="calibratedRGB"/>
+                </scrollView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEk-jp-iO4" customClass="CustomeScrollView" customModule="Ikonagram" customModuleProvider="target">
+                    <rect key="frame" x="306" y="10" width="286" height="286"/>
+                    <color key="backgroundColor" red="0.77201704550000005" green="0.77201704550000005" blue="0.77201704550000005" alpha="1" colorSpace="calibratedRGB"/>
+                </scrollView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nd4-XH-OYn" customClass="CustomeScrollView" customModule="Ikonagram" customModuleProvider="target">
+                    <rect key="frame" x="306" y="306" width="286" height="286"/>
+                    <color key="backgroundColor" red="0.77201704550000005" green="0.77201704550000005" blue="0.77201704550000005" alpha="1" colorSpace="calibratedRGB"/>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atm-ZJ-tDs">
+                    <rect key="frame" x="103" y="286" width="100" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="Add Image"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUl-Wv-x2o">
+                    <rect key="frame" x="399" y="434" width="100" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="Add Image"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lF-zj-32n">
+                    <rect key="frame" x="399" y="138" width="100" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="Add Image"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Nd4-XH-OYn" secondAttribute="trailing" constant="8" id="4Df-KJ-LLw"/>
+                <constraint firstItem="9lF-zj-32n" firstAttribute="centerY" secondItem="cEk-jp-iO4" secondAttribute="centerY" id="8A8-QI-x6f"/>
+                <constraint firstAttribute="trailing" secondItem="cEk-jp-iO4" secondAttribute="trailing" constant="8" id="8H7-Eh-GsP"/>
+                <constraint firstAttribute="bottom" secondItem="YpA-Nh-a60" secondAttribute="bottom" constant="8" id="GTd-aZ-x6s"/>
+                <constraint firstItem="YpA-Nh-a60" firstAttribute="width" secondItem="cEk-jp-iO4" secondAttribute="width" id="Gv1-Ay-QFv"/>
+                <constraint firstItem="Nd4-XH-OYn" firstAttribute="height" secondItem="cEk-jp-iO4" secondAttribute="height" id="J0q-bH-z00"/>
+                <constraint firstItem="pUl-Wv-x2o" firstAttribute="centerX" secondItem="Nd4-XH-OYn" secondAttribute="centerX" id="PPm-oa-dTf"/>
+                <constraint firstItem="YpA-Nh-a60" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="QIJ-zg-fxm"/>
+                <constraint firstItem="pUl-Wv-x2o" firstAttribute="centerY" secondItem="Nd4-XH-OYn" secondAttribute="centerY" id="TCg-y9-diy"/>
+                <constraint firstItem="atm-ZJ-tDs" firstAttribute="centerY" secondItem="YpA-Nh-a60" secondAttribute="centerY" id="aZl-Tw-lI8"/>
+                <constraint firstItem="atm-ZJ-tDs" firstAttribute="centerX" secondItem="YpA-Nh-a60" secondAttribute="centerX" id="bXS-JX-k2u"/>
+                <constraint firstItem="cEk-jp-iO4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="ewl-q9-5C6"/>
+                <constraint firstItem="Nd4-XH-OYn" firstAttribute="width" secondItem="cEk-jp-iO4" secondAttribute="width" id="fLn-H6-2Lx"/>
+                <constraint firstItem="Nd4-XH-OYn" firstAttribute="top" secondItem="cEk-jp-iO4" secondAttribute="bottom" constant="10" id="io7-ze-yOj"/>
+                <constraint firstItem="YpA-Nh-a60" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="mTT-bP-BxK"/>
+                <constraint firstItem="9lF-zj-32n" firstAttribute="centerX" secondItem="cEk-jp-iO4" secondAttribute="centerX" id="uti-IA-38G"/>
+                <constraint firstAttribute="bottom" secondItem="Nd4-XH-OYn" secondAttribute="bottom" constant="8" id="xf6-72-H67"/>
+                <constraint firstItem="cEk-jp-iO4" firstAttribute="leading" secondItem="YpA-Nh-a60" secondAttribute="trailing" constant="10" id="xhk-mv-QKy"/>
+                <constraint firstItem="Nd4-XH-OYn" firstAttribute="leading" secondItem="YpA-Nh-a60" secondAttribute="trailing" constant="10" id="yFR-F7-aa9"/>
+            </constraints>
+            <connections>
+                <outlet property="btn_addImage1" destination="atm-ZJ-tDs" id="B7L-l9-9Gt"/>
+                <outlet property="btn_addImage2" destination="9lF-zj-32n" id="yJX-7K-lES"/>
+                <outlet property="btn_addImage3" destination="pUl-Wv-x2o" id="MnB-zT-14z"/>
+                <outlet property="firstScrollView" destination="YpA-Nh-a60" id="v5Z-KT-0c3"/>
+                <outlet property="secondScrollView" destination="cEk-jp-iO4" id="b5C-EG-xQs"/>
+                <outlet property="thirdScrollView" destination="Nd4-XH-OYn" id="hCa-1n-ANB"/>
+            </connections>
+        </view>
+    </objects>
+</document>

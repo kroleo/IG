@@ -31,6 +31,25 @@
 		63C69E081C7E17B300556765 /* addContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69E071C7E17B300556765 /* addContacts.swift */; };
 		63C69E0A1C7E17F800556765 /* summaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69E091C7E17F800556765 /* summaryView.swift */; };
 		63C69E0E1C7E217E00556765 /* configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69E0D1C7E217E00556765 /* configs.swift */; };
+		63C69E101C7EB68800556765 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E0F1C7EB68800556765 /* AVFoundation.framework */; };
+		63C69E121C7EB6AB00556765 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E111C7EB6AB00556765 /* Accelerate.framework */; };
+		63C69E141C7EB6BA00556765 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E131C7EB6BA00556765 /* CoreMedia.framework */; };
+		63C69E161C7EB6C800556765 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E151C7EB6C800556765 /* MobileCoreServices.framework */; };
+		63C69E181C7EB6D500556765 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E171C7EB6D500556765 /* SafariServices.framework */; };
+		63C69E2C1C7EB74000556765 /* libopencv_imgproc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E281C7EB74000556765 /* libopencv_imgproc.a */; };
+		63C69E2E1C7EB74000556765 /* libopencv_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E2A1C7EB74000556765 /* libopencv_core.a */; };
+		63C69E2F1C7EB74000556765 /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E2B1C7EB74000556765 /* libCardIO.a */; };
+		63C69E391C7EB93A00556765 /* SingleImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63C69E301C7EB93A00556765 /* SingleImageView.xib */; };
+		63C69E3A1C7EB93A00556765 /* ThreeImagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63C69E311C7EB93A00556765 /* ThreeImagesView.xib */; };
+		63C69E3B1C7EB93A00556765 /* TwoImagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63C69E321C7EB93A00556765 /* TwoImagesView.xib */; };
+		63C69E3C1C7EB93A00556765 /* CustomeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69E331C7EB93A00556765 /* CustomeScrollView.swift */; };
+		63C69E3D1C7EB93A00556765 /* SingleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69E351C7EB93A00556765 /* SingleImageView.swift */; };
+		63C69E3E1C7EB93A00556765 /* ThreeImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69E361C7EB93A00556765 /* ThreeImagesView.swift */; };
+		63C69E3F1C7EB93A00556765 /* TwoImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69E371C7EB93A00556765 /* TwoImagesView.swift */; };
+		63C69E421C7ECB5F00556765 /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E411C7ECB5F00556765 /* libPayPalMobile.a */; };
+		63C69E461C7ECE4E00556765 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E451C7ECE4E00556765 /* libz.tbd */; };
+		63C69E481C7ECE5A00556765 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E471C7ECE5A00556765 /* libsqlite3.tbd */; };
+		63C69E591C7ED07000556765 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E581C7ED07000556765 /* MessageUI.framework */; };
 		7AAE1E7FB22DD079FCF3110B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5ACA696C21988213E0B690 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +81,42 @@
 		63C69E071C7E17B300556765 /* addContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addContacts.swift; sourceTree = "<group>"; };
 		63C69E091C7E17F800556765 /* summaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = summaryView.swift; sourceTree = "<group>"; };
 		63C69E0D1C7E217E00556765 /* configs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = configs.swift; sourceTree = "<group>"; };
+		63C69E0F1C7EB68800556765 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		63C69E111C7EB6AB00556765 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		63C69E131C7EB6BA00556765 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		63C69E151C7EB6C800556765 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		63C69E171C7EB6D500556765 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		63C69E281C7EB74000556765 /* libopencv_imgproc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_imgproc.a; sourceTree = "<group>"; };
+		63C69E2A1C7EB74000556765 /* libopencv_core.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_core.a; sourceTree = "<group>"; };
+		63C69E2B1C7EB74000556765 /* libCardIO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCardIO.a; sourceTree = "<group>"; };
+		63C69E301C7EB93A00556765 /* SingleImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleImageView.xib; sourceTree = "<group>"; };
+		63C69E311C7EB93A00556765 /* ThreeImagesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreeImagesView.xib; sourceTree = "<group>"; };
+		63C69E321C7EB93A00556765 /* TwoImagesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoImagesView.xib; sourceTree = "<group>"; };
+		63C69E331C7EB93A00556765 /* CustomeScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomeScrollView.swift; sourceTree = "<group>"; };
+		63C69E341C7EB93A00556765 /* Ikonagram-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Ikonagram-Bridging-Header.h"; sourceTree = "<group>"; };
+		63C69E351C7EB93A00556765 /* SingleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleImageView.swift; sourceTree = "<group>"; };
+		63C69E361C7EB93A00556765 /* ThreeImagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeImagesView.swift; sourceTree = "<group>"; };
+		63C69E371C7EB93A00556765 /* TwoImagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoImagesView.swift; sourceTree = "<group>"; };
+		63C69E381C7EB93A00556765 /* ZZAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAppDelegate.h; sourceTree = "<group>"; };
+		63C69E411C7ECB5F00556765 /* libPayPalMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPayPalMobile.a; path = Ikonagram/libPayPalMobile.a; sourceTree = "<group>"; };
+		63C69E451C7ECE4E00556765 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		63C69E471C7ECE5A00556765 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		63C69E491C7ECEEF00556765 /* PayPalConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PayPalConfiguration.h; path = Ikonagram/PayPalConfiguration.h; sourceTree = "<group>"; };
+		63C69E4A1C7ECEEF00556765 /* PayPalFuturePaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PayPalFuturePaymentViewController.h; path = Ikonagram/PayPalFuturePaymentViewController.h; sourceTree = "<group>"; };
+		63C69E4B1C7ECEEF00556765 /* PayPalMobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PayPalMobile.h; path = Ikonagram/PayPalMobile.h; sourceTree = "<group>"; };
+		63C69E4C1C7ECEEF00556765 /* PayPalOAuthScopes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PayPalOAuthScopes.h; path = Ikonagram/PayPalOAuthScopes.h; sourceTree = "<group>"; };
+		63C69E4D1C7ECEEF00556765 /* PayPalPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PayPalPayment.h; path = Ikonagram/PayPalPayment.h; sourceTree = "<group>"; };
+		63C69E4E1C7ECEEF00556765 /* PayPalPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PayPalPaymentViewController.h; path = Ikonagram/PayPalPaymentViewController.h; sourceTree = "<group>"; };
+		63C69E4F1C7ECEEF00556765 /* PayPalProfileSharingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PayPalProfileSharingViewController.h; path = Ikonagram/PayPalProfileSharingViewController.h; sourceTree = "<group>"; };
+		63C69E501C7ECEEF00556765 /* CardIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardIO.h; path = Ikonagram/CardIO.h; sourceTree = "<group>"; };
+		63C69E511C7ECEEF00556765 /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardIOCreditCardInfo.h; path = Ikonagram/CardIOCreditCardInfo.h; sourceTree = "<group>"; };
+		63C69E521C7ECEEF00556765 /* CardIODetectionMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardIODetectionMode.h; path = Ikonagram/CardIODetectionMode.h; sourceTree = "<group>"; };
+		63C69E531C7ECEEF00556765 /* CardIOPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewController.h; path = Ikonagram/CardIOPaymentViewController.h; sourceTree = "<group>"; };
+		63C69E541C7ECEEF00556765 /* CardIOPaymentViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewControllerDelegate.h; path = Ikonagram/CardIOPaymentViewControllerDelegate.h; sourceTree = "<group>"; };
+		63C69E551C7ECEEF00556765 /* CardIOUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardIOUtilities.h; path = Ikonagram/CardIOUtilities.h; sourceTree = "<group>"; };
+		63C69E561C7ECEEF00556765 /* CardIOView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardIOView.h; path = Ikonagram/CardIOView.h; sourceTree = "<group>"; };
+		63C69E571C7ECEEF00556765 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardIOViewDelegate.h; path = Ikonagram/CardIOViewDelegate.h; sourceTree = "<group>"; };
+		63C69E581C7ED07000556765 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		9F5ACA696C21988213E0B690 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2FC4DE6426A004E04E573B4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,15 +126,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63C69E591C7ED07000556765 /* MessageUI.framework in Frameworks */,
+				63C69E481C7ECE5A00556765 /* libsqlite3.tbd in Frameworks */,
+				63C69E461C7ECE4E00556765 /* libz.tbd in Frameworks */,
+				63C69E181C7EB6D500556765 /* SafariServices.framework in Frameworks */,
+				63C69E161C7EB6C800556765 /* MobileCoreServices.framework in Frameworks */,
+				63C69E141C7EB6BA00556765 /* CoreMedia.framework in Frameworks */,
+				63C69E121C7EB6AB00556765 /* Accelerate.framework in Frameworks */,
+				63C69E101C7EB68800556765 /* AVFoundation.framework in Frameworks */,
 				63C69DF81C7D805300556765 /* AudioToolbox.framework in Frameworks */,
-				63C69DF61C7D803F00556765 /* CFNetwork.framework in Frameworks */,
 				63C69DF31C7D802F00556765 /* CoreGraphics.framework in Frameworks */,
 				63C69DF41C7D802F00556765 /* CoreLocation.framework in Frameworks */,
+				63C69DF61C7D803F00556765 /* CFNetwork.framework in Frameworks */,
 				63C69DF01C7D801900556765 /* QuartzCore.framework in Frameworks */,
 				63C69DEE1C7D800900556765 /* StoreKit.framework in Frameworks */,
 				63C69DEA1C7D7FCA00556765 /* Security.framework in Frameworks */,
 				63C69DEB1C7D7FCA00556765 /* SystemConfiguration.framework in Frameworks */,
 				7AAE1E7FB22DD079FCF3110B /* Pods.framework in Frameworks */,
+				63C69E421C7ECB5F00556765 /* libPayPalMobile.a in Frameworks */,
+				63C69E2F1C7EB74000556765 /* libCardIO.a in Frameworks */,
+				63C69E2C1C7EB74000556765 /* libopencv_imgproc.a in Frameworks */,
+				63C69E2E1C7EB74000556765 /* libopencv_core.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +175,15 @@
 		63C69DD11C7D039800556765 /* Ikonagram */ = {
 			isa = PBXGroup;
 			children = (
+				63C69E301C7EB93A00556765 /* SingleImageView.xib */,
+				63C69E311C7EB93A00556765 /* ThreeImagesView.xib */,
+				63C69E321C7EB93A00556765 /* TwoImagesView.xib */,
+				63C69E331C7EB93A00556765 /* CustomeScrollView.swift */,
+				63C69E341C7EB93A00556765 /* Ikonagram-Bridging-Header.h */,
+				63C69E351C7EB93A00556765 /* SingleImageView.swift */,
+				63C69E361C7EB93A00556765 /* ThreeImagesView.swift */,
+				63C69E371C7EB93A00556765 /* TwoImagesView.swift */,
+				63C69E381C7EB93A00556765 /* ZZAppDelegate.h */,
 				63C69DD21C7D039800556765 /* AppDelegate.swift */,
 				63C69E011C7E171000556765 /* frontPostcard.swift */,
 				63C69E0D1C7E217E00556765 /* configs.swift */,
@@ -127,6 +203,33 @@
 		63C69DEC1C7D7FDF00556765 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63C69E581C7ED07000556765 /* MessageUI.framework */,
+				63C69E491C7ECEEF00556765 /* PayPalConfiguration.h */,
+				63C69E4A1C7ECEEF00556765 /* PayPalFuturePaymentViewController.h */,
+				63C69E4B1C7ECEEF00556765 /* PayPalMobile.h */,
+				63C69E4C1C7ECEEF00556765 /* PayPalOAuthScopes.h */,
+				63C69E4D1C7ECEEF00556765 /* PayPalPayment.h */,
+				63C69E4E1C7ECEEF00556765 /* PayPalPaymentViewController.h */,
+				63C69E4F1C7ECEEF00556765 /* PayPalProfileSharingViewController.h */,
+				63C69E501C7ECEEF00556765 /* CardIO.h */,
+				63C69E511C7ECEEF00556765 /* CardIOCreditCardInfo.h */,
+				63C69E521C7ECEEF00556765 /* CardIODetectionMode.h */,
+				63C69E531C7ECEEF00556765 /* CardIOPaymentViewController.h */,
+				63C69E541C7ECEEF00556765 /* CardIOPaymentViewControllerDelegate.h */,
+				63C69E551C7ECEEF00556765 /* CardIOUtilities.h */,
+				63C69E561C7ECEEF00556765 /* CardIOView.h */,
+				63C69E571C7ECEEF00556765 /* CardIOViewDelegate.h */,
+				63C69E471C7ECE5A00556765 /* libsqlite3.tbd */,
+				63C69E451C7ECE4E00556765 /* libz.tbd */,
+				63C69E411C7ECB5F00556765 /* libPayPalMobile.a */,
+				63C69E281C7EB74000556765 /* libopencv_imgproc.a */,
+				63C69E2A1C7EB74000556765 /* libopencv_core.a */,
+				63C69E2B1C7EB74000556765 /* libCardIO.a */,
+				63C69E171C7EB6D500556765 /* SafariServices.framework */,
+				63C69E151C7EB6C800556765 /* MobileCoreServices.framework */,
+				63C69E131C7EB6BA00556765 /* CoreMedia.framework */,
+				63C69E111C7EB6AB00556765 /* Accelerate.framework */,
+				63C69E0F1C7EB68800556765 /* AVFoundation.framework */,
 				63C69DF71C7D805300556765 /* AudioToolbox.framework */,
 				63C69DF51C7D803F00556765 /* CFNetwork.framework */,
 				63C69DF11C7D802F00556765 /* CoreGraphics.framework */,
@@ -230,7 +333,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63C69E391C7EB93A00556765 /* SingleImageView.xib in Resources */,
+				63C69E3B1C7EB93A00556765 /* TwoImagesView.xib in Resources */,
 				63C69DDD1C7D039800556765 /* LaunchScreen.storyboard in Resources */,
+				63C69E3A1C7EB93A00556765 /* ThreeImagesView.xib in Resources */,
 				63C69DDA1C7D039800556765 /* Assets.xcassets in Resources */,
 				63C69DD81C7D039800556765 /* Main.storyboard in Resources */,
 			);
@@ -291,6 +397,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63C69E3F1C7EB93A00556765 /* TwoImagesView.swift in Sources */,
+				63C69E3D1C7EB93A00556765 /* SingleImageView.swift in Sources */,
 				63C69DD51C7D039800556765 /* SplashView.swift in Sources */,
 				63C69DFC1C7D872F00556765 /* SignUpView.swift in Sources */,
 				63C69E081C7E17B300556765 /* addContacts.swift in Sources */,
@@ -299,6 +407,8 @@
 				63C69E001C7D874F00556765 /* ResetPasswordView.swift in Sources */,
 				63C69E041C7E178200556765 /* backPostcard.swift in Sources */,
 				63C69DFE1C7D874000556765 /* SettingsView.swift in Sources */,
+				63C69E3E1C7EB93A00556765 /* ThreeImagesView.swift in Sources */,
+				63C69E3C1C7EB93A00556765 /* CustomeScrollView.swift in Sources */,
 				63C69DFA1C7D871F00556765 /* LogInView.swift in Sources */,
 				63C69DD31C7D039800556765 /* AppDelegate.swift in Sources */,
 				63C69E0A1C7E17F800556765 /* summaryView.swift in Sources */,
@@ -405,6 +515,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -418,8 +529,14 @@
 				INFOPLIST_FILE = Ikonagram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Ikonagram",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kroleo.Ikonagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ikonagram/Ikonagram-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -431,8 +548,14 @@
 				INFOPLIST_FILE = Ikonagram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Ikonagram",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kroleo.Ikonagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ikonagram/Ikonagram-Bridging-Header.h";
 			};
 			name = Release;
 		};

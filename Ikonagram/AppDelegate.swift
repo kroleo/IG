@@ -32,7 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
-        
+//        self.storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle());
+//        if PFUser.currentUser() != nil {
+//            self.window?.rootViewController = self.storyboard?.instantiateViewControllerWithIdentifier("frontPostcard");
+//        }
         
         
         return true
