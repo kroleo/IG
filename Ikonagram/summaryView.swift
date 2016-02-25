@@ -34,12 +34,14 @@ class summaryView: UIViewController, PayPalPaymentDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        PayPalMobile.initializeWithClientIdsForEnvironments([PayPalEnvironmentProduction: "abc", PayPalEnvironmentSandbox: "xyz"])
+
         // Do any additional setup after loading the view.
         
         self.image.image = previewImage
-        self.image.sizeToFit()
+//        self.image.sizeToFit()
         self.text.text = final_text
-        
+/*
         payPalConfig.acceptCreditCards = acceptCreditCards;
         payPalConfig.merchantName = "Kroleo Studios Inc."
         payPalConfig.merchantPrivacyPolicyURL = NSURL(string: "https://www.sivaganesh.com/privacy.html")
@@ -48,6 +50,8 @@ class summaryView: UIViewController, PayPalPaymentDelegate{
         payPalConfig.payPalShippingAddressOption = .PayPal;
         
         PayPalMobile.preconnectWithEnvironment(environment)
+        
+        */
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,7 +75,7 @@ class summaryView: UIViewController, PayPalPaymentDelegate{
     
     
     @IBAction func pay(sender: UIButton) {
-        
+/*
         // Process Payment once the pay button is clicked.
         
         let item1 = PayPalItem(name: "Postcard", withQuantity: 1, withPrice: NSDecimalNumber(string: "5.99"), withCurrency: "USD", withSku: "0001")
@@ -100,5 +104,8 @@ class summaryView: UIViewController, PayPalPaymentDelegate{
             
             print("Payment not processalbe: \(payment)")
         }
+*/
     }
+
+
 }

@@ -97,7 +97,6 @@
 		63C69E351C7EB93A00556765 /* SingleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleImageView.swift; sourceTree = "<group>"; };
 		63C69E361C7EB93A00556765 /* ThreeImagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeImagesView.swift; sourceTree = "<group>"; };
 		63C69E371C7EB93A00556765 /* TwoImagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoImagesView.swift; sourceTree = "<group>"; };
-		63C69E381C7EB93A00556765 /* ZZAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAppDelegate.h; sourceTree = "<group>"; };
 		63C69E411C7ECB5F00556765 /* libPayPalMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPayPalMobile.a; path = Ikonagram/libPayPalMobile.a; sourceTree = "<group>"; };
 		63C69E451C7ECE4E00556765 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		63C69E471C7ECE5A00556765 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -117,6 +116,7 @@
 		63C69E561C7ECEEF00556765 /* CardIOView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardIOView.h; path = Ikonagram/CardIOView.h; sourceTree = "<group>"; };
 		63C69E571C7ECEEF00556765 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardIOViewDelegate.h; path = Ikonagram/CardIOViewDelegate.h; sourceTree = "<group>"; };
 		63C69E581C7ED07000556765 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		63C69E5A1C7ED1EC00556765 /* ZZAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAppDelegate.h; sourceTree = "<group>"; };
 		9F5ACA696C21988213E0B690 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2FC4DE6426A004E04E573B4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,10 +180,10 @@
 				63C69E321C7EB93A00556765 /* TwoImagesView.xib */,
 				63C69E331C7EB93A00556765 /* CustomeScrollView.swift */,
 				63C69E341C7EB93A00556765 /* Ikonagram-Bridging-Header.h */,
+				63C69E5A1C7ED1EC00556765 /* ZZAppDelegate.h */,
 				63C69E351C7EB93A00556765 /* SingleImageView.swift */,
 				63C69E361C7EB93A00556765 /* ThreeImagesView.swift */,
 				63C69E371C7EB93A00556765 /* TwoImagesView.swift */,
-				63C69E381C7EB93A00556765 /* ZZAppDelegate.h */,
 				63C69DD21C7D039800556765 /* AppDelegate.swift */,
 				63C69E011C7E171000556765 /* frontPostcard.swift */,
 				63C69E0D1C7E217E00556765 /* configs.swift */,
