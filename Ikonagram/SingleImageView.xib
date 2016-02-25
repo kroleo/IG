@@ -14,15 +14,16 @@
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Wd-kZ-e3b" customClass="CustomeScrollView" customModule="Ikonagram" customModuleProvider="target">
                     <rect key="frame" x="10" y="10" width="582" height="582"/>
-                    <color key="backgroundColor" red="0.77201704550000005" green="0.77201704550000005" blue="0.77201704550000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vy-x1-vc6">
                     <rect key="frame" x="250" y="287" width="100" height="27"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="75" id="Hhw-j3-UMU"/>
                     </constraints>
-                    <state key="normal" title="Add Image"/>
+                    <state key="normal" title="Add Image">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

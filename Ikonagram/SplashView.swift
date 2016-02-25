@@ -10,6 +10,8 @@ import UIKit
 
 class SplashView: UIViewController, UIPageViewControllerDataSource {
     
+    @IBOutlet weak var splashView: UIView!
+    @IBOutlet weak var buttonView: UIView!
     var pageViewController: UIPageViewController!
     var pageImages: NSArray!
     
@@ -17,7 +19,7 @@ class SplashView: UIViewController, UIPageViewControllerDataSource {
     {
         super.viewDidLoad()
         
-        self.pageImages = NSArray(objects: "page1", "page2")
+        self.pageImages = NSArray(objects: "page3", "page2", "page1")
         
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
         self.pageViewController.dataSource = self
@@ -27,10 +29,10 @@ class SplashView: UIViewController, UIPageViewControllerDataSource {
         
         self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .Forward, animated: true, completion: nil)
         
-        self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 60)
+        //self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 60)
         
         self.addChildViewController(self.pageViewController)
-        self.view.addSubview(self.pageViewController.view)
+        self.splashView.addSubview(self.pageViewController.view)
         self.pageViewController.didMoveToParentViewController(self)
         
         
