@@ -534,7 +534,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Ikonagram",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kroleo.Ikonagram;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kroleo.Ikona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ikonagram/Ikonagram-Bridging-Header.h";
 			};
@@ -553,7 +553,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Ikonagram",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kroleo.Ikonagram;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kroleo.Ikona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ikonagram/Ikonagram-Bridging-Header.h";
 			};

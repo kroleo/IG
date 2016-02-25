@@ -472,6 +472,9 @@
                                 <state key="normal" title="Chalkboard">
                                     <color key="titleColor" white="0.60007183909999995" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="font1:" destination="Hwd-tB-qZc" eventType="touchUpInside" id="c44-iX-KtP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="c7Y-7Y-5NG">
                                 <rect key="frame" x="101" y="387" width="119" height="30"/>
@@ -481,6 +484,13 @@
                                     <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hRq-LV-7ke">
+                                <rect key="frame" x="114" y="161" width="93" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="FLM-ne-bDX">
                                 <rect key="frame" x="20" y="74" width="280" height="196"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -495,6 +505,7 @@
                                         </connections>
                                     </textField>
                                 </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
                             <view contentMode="scaleToFill" id="Zun-7U-wVI">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
@@ -514,13 +525,6 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.36159708709999999" blue="0.31523164329999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Font" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hRq-LV-7ke">
-                                <rect key="frame" x="114" y="298" width="93" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qbZ-19-8of">
                                 <rect key="frame" x="235" y="426" width="65" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -529,10 +533,19 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Font" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y0v-fl-OAm">
+                                <rect key="frame" x="114" y="298" width="93" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Write a Message" id="EIL-Fw-3Hi"/>
+                    <navigationItem key="navigationItem" title="Write a Message" id="EIL-Fw-3Hi">
+                        <barButtonItem key="backBarButtonItem" title="Step 1" id="YrT-63-W0O"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="edit" destination="UoS-8U-brr" id="CsO-Da-9wj"/>
                         <outlet property="message" destination="hRq-LV-7ke" id="TzC-Hg-PoK"/>
@@ -602,6 +615,7 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Choose Contacts" id="85T-e0-0ld">
+                        <barButtonItem key="backBarButtonItem" title="Step 2" id="s6l-fN-8q5"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="UPZ-cS-dBW"/>
                     </navigationItem>
                     <connections>
@@ -645,8 +659,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="196"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -665,7 +679,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Send" id="3E2-wa-llS"/>
+                    <navigationItem key="navigationItem" title="Send" id="3E2-wa-llS">
+                        <barButtonItem key="backBarButtonItem" title="Step 3" id="oZh-nk-vVT"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="image" destination="zoF-QV-gUG" id="LG4-ek-KVn"/>
                         <outlet property="text" destination="Zhr-br-CLE" id="NAf-fV-bDB"/>
@@ -764,7 +780,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Contact" id="CFf-Ts-bSg"/>
+                    <navigationItem key="navigationItem" title="Add Contact" id="CFf-Ts-bSg">
+                        <barButtonItem key="backBarButtonItem" title="Step 3" id="QTA-BZ-dmM"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="address" destination="sqc-RC-xH3" id="U0f-IP-GgN"/>
                         <outlet property="name" destination="KBY-qt-ZpY" id="QhA-Ab-Hwa"/>
@@ -794,7 +812,7 @@
                                         <rect key="frame" x="39" y="69" width="200" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wkI-Ea-8fj">
                                         <rect key="frame" x="61" y="216" width="156" height="30"/>
@@ -847,7 +865,7 @@
                                         <rect key="frame" x="39" y="114" width="200" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -862,6 +880,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OKb-xN-BgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kMz-SR-SZj" userLabel="TapToDismissKeyboard">
+                    <connections>
+                        <action selector="dimisssKeyboard:" destination="Sm4-mh-won" id="11S-rl-n4g"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-5" y="783"/>
         </scene>

@@ -14,6 +14,10 @@ class backPostcard: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var edit: UITextField!
     
+    @IBAction func font1(sender: UIButton) {
+        message.font = UIFont(name: "Chalkboard", size: 15)
+        
+    }
     @IBOutlet weak var message: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +35,13 @@ class backPostcard: UIViewController, UITextFieldDelegate {
         return false
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
-        scrollview.setContentOffset(CGPointMake(0, 200), animated: true)
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        scrollview.setContentOffset(CGPointMake(0, 0), animated: true)
-    }
+//    func textFieldDidBeginEditing(textField: UITextField) {
+//        scrollview.setContentOffset(CGPointMake(0, 200), animated: true)
+//    }
+//    
+//    func textFieldDidEndEditing(textField: UITextField) {
+//        scrollview.setContentOffset(CGPointMake(0, 0), animated: true)
+//    }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)

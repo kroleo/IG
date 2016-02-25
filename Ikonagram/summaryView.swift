@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class summaryView: UIViewController, PayPalPaymentDelegate{
     
@@ -75,6 +76,38 @@ class summaryView: UIViewController, PayPalPaymentDelegate{
     
     
     @IBAction func pay(sender: UIButton) {
+        
+            let cardsClass = PFObject(className: "Cards")
+            cardsClass["message"] = final_text
+        
+        if previewImage != nil {
+            let imageData = UIImageJPEGRepresentation(previewImage!, 0.5)
+            let imageFile = PFFile(name:"image.jpg", data:imageData!)
+            cardsClass["picture1"] = imageFile
+            
+            
+            cardsClass.saveInBackgroundWithBlock { (success, error) -> Void in
+                if error == nil {
+                    //self.view.hideHUD()
+                    //self.openMailVC()
+                    // will send as message
+                } else {
+                    let alert = UIAlertView(title: APP_NAME,
+                        message: "\(error!.localizedDescription)",
+                        delegate: nil,
+                        cancelButtonTitle: "OK" )
+                    alert.show()
+                    //self.view.hideHUD()
+                } }
+        }
+
+        
+        
+        
+        
+        
+        
+        
 /*
         // Process Payment once the pay button is clicked.
         

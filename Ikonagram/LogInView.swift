@@ -9,12 +9,31 @@
 import UIKit
 import Parse
 
-class LogInView: UIViewController {
+class LogInView: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+//    @IBAction func dimisssKeyboard(sender: UITapGestureRecognizer) {
+//        dismissKeyboard()
+//    }
+//    
+//    // DISMISS KEYBOARD
+//    func dismissKeyboard() {
+//        self.passwordField.resignFirstResponder()
+//        usernameField.resignFirstResponder()
+//    }
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        //dismissKeyboard()
+        self.view.endEditing(true)
+        return false
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        usernameField.delegate = self
+        passwordField.delegate = self
         // Do any additional setup after loading the view.
     }
     

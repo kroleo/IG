@@ -11,14 +11,26 @@ import Parse
 import UIKit
 
 
-class SignUpView: UIViewController {
+class SignUpView: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        //dismissKeyboard()
+        self.view.endEditing(true)
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emailField.delegate = self
+        firstNameField.delegate = self
+        lastNameField.delegate = self
+        passwordField.delegate = self
         // Do any additional setup after loading the view.
     }
     
