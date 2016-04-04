@@ -55,6 +55,7 @@
                 <outlet property="btn_addImage" destination="3vy-x1-vc6" id="pe0-v9-DgE"/>
                 <outlet property="imageview" destination="9Wd-kZ-e3b" id="9Zj-NQ-fsS"/>
             </connections>
+            <point key="canvasLocation" x="484" y="276"/>
         </view>
     </objects>
 </document>

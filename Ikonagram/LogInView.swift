@@ -7,11 +7,13 @@
 //
 
 import UIKit
-import Parse
+
 
 class LogInView: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    var user: User?
+    
     
 //    @IBAction func dimisssKeyboard(sender: UITapGestureRecognizer) {
 //        dismissKeyboard()
@@ -34,6 +36,7 @@ class LogInView: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         usernameField.delegate = self
         passwordField.delegate = self
+        passwordField.secureTextEntry = true
         // Do any additional setup after loading the view.
     }
     
@@ -42,15 +45,21 @@ class LogInView: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    /*
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
+        if segue.identifier=="loginToPostcard" {
+            let destination = segue.destinationViewController as? UINavigationController
+                let stepOne = destination?.viewControllers[0] as? frontPostcard
+                stepOne!.user = self.user
+            
+        }
     }
-    */
+
     //Validate Email/Username
     
     func isValidEmail(testStr:String) -> Bool {
@@ -69,46 +78,22 @@ class LogInView: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func loginAction(sender: AnyObject) {
-        let username = self.usernameField.text
+        let email = self.usernameField.text
         let password = self.passwordField.text
-        
-        //Validate Email which is username
-        if isValidEmail(usernameField.text!)
-        {
-            print("Valid EmailID")
-            
-            // Run a spinner to show a task in progress
-            let spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
-            spinner.startAnimating()
-            
-            // Send a request to login
-            PFUser.logInWithUsernameInBackground(username!, password: password!, block: { (user, error) -> Void in
-                
-                // Stop the spinner
-                spinner.stopAnimating()
-                
-                if ((user) != nil) {
-                    let alert = UIAlertView(title: "Success", message: "Logged In", delegate: self, cancelButtonTitle: "OK")
-                    alert.show()
-                    
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("navController")
-                        self.presentViewController(viewController, animated: true, completion: nil)
-                    })
-                    
-                } else {
-                    let alert = UIAlertView(title: "Error", message: "Invalid username or password", delegate: self, cancelButtonTitle: "OK")
-                    alert.show()
-                }
+        let login = AuthenticationOperation(url: NSURL(string:"http://45.55.37.26:3000/ios_login")!)
+        login.logIn(email!, password: password!){ (let loginUser) in
+            //Assign the user to be passed around
+            self.user = loginUser
+            //perform segue on main thread
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("navController")
+               let stepOne =  viewController.childViewControllers.first as? frontPostcard
+                stepOne?.user = self.user
+                self.presentViewController(viewController, animated: true, completion: nil)
             })
         }
-        else
-        {
-            print("Invalid EmailID")
-            let alert = UIAlertView(title: "Invalid Email", message: "Please type a valid email", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
-        }
-        
+        //Validate Email which is username
+                
     }
     
 }

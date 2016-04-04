@@ -14,14 +14,19 @@ class backPostcard: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var edit: UITextField!
     
+    var user: User?
     @IBAction func font1(sender: UIButton) {
         message.font = UIFont(name: "Chalkboard", size: 15)
-        
     }
     @IBOutlet weak var message: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let getContacts = AuthenticationOperation(url: NSURL(string:"http://45.55.37.26:3000/ios_get_contacts/?id=\(self.user!.id)")!)
+        getContacts.getContacts(user!.id){ (let contacts) in
+            dispatch_async(dispatch_get_main_queue(),{
+                self.user!.add_contacts(contacts)
+            })
+        }
         self.edit.delegate = self;
     }
     
@@ -51,5 +56,13 @@ class backPostcard: UIViewController, UITextFieldDelegate {
         final_text = self.message.text
     }
     
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toContacts"{
+            print(self.user!.contacts)
+            let destination = segue.destinationViewController as? selectContacts
+            print(self.edit.text)
+            destination!.user = self.user
+            destination!.text = self.edit.text
+        }
+    }
 }

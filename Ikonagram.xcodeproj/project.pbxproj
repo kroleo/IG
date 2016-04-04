@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		63C69DD31C7D039800556765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69DD21C7D039800556765 /* AppDelegate.swift */; };
 		63C69DD51C7D039800556765 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69DD41C7D039800556765 /* SplashView.swift */; };
-		63C69DD81C7D039800556765 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C69DD61C7D039800556765 /* Main.storyboard */; };
 		63C69DDA1C7D039800556765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C69DD91C7D039800556765 /* Assets.xcassets */; };
 		63C69DDD1C7D039800556765 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C69DDB1C7D039800556765 /* LaunchScreen.storyboard */; };
 		63C69DE51C7D68D500556765 /* LoginSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69DE41C7D68D500556765 /* LoginSlides.swift */; };
@@ -36,9 +35,6 @@
 		63C69E141C7EB6BA00556765 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E131C7EB6BA00556765 /* CoreMedia.framework */; };
 		63C69E161C7EB6C800556765 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E151C7EB6C800556765 /* MobileCoreServices.framework */; };
 		63C69E181C7EB6D500556765 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E171C7EB6D500556765 /* SafariServices.framework */; };
-		63C69E2C1C7EB74000556765 /* libopencv_imgproc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E281C7EB74000556765 /* libopencv_imgproc.a */; };
-		63C69E2E1C7EB74000556765 /* libopencv_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E2A1C7EB74000556765 /* libopencv_core.a */; };
-		63C69E2F1C7EB74000556765 /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E2B1C7EB74000556765 /* libCardIO.a */; };
 		63C69E391C7EB93A00556765 /* SingleImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63C69E301C7EB93A00556765 /* SingleImageView.xib */; };
 		63C69E3A1C7EB93A00556765 /* ThreeImagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63C69E311C7EB93A00556765 /* ThreeImagesView.xib */; };
 		63C69E3B1C7EB93A00556765 /* TwoImagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63C69E321C7EB93A00556765 /* TwoImagesView.xib */; };
@@ -46,11 +42,13 @@
 		63C69E3D1C7EB93A00556765 /* SingleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69E351C7EB93A00556765 /* SingleImageView.swift */; };
 		63C69E3E1C7EB93A00556765 /* ThreeImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69E361C7EB93A00556765 /* ThreeImagesView.swift */; };
 		63C69E3F1C7EB93A00556765 /* TwoImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69E371C7EB93A00556765 /* TwoImagesView.swift */; };
-		63C69E421C7ECB5F00556765 /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E411C7ECB5F00556765 /* libPayPalMobile.a */; };
 		63C69E461C7ECE4E00556765 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E451C7ECE4E00556765 /* libz.tbd */; };
 		63C69E481C7ECE5A00556765 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E471C7ECE5A00556765 /* libsqlite3.tbd */; };
 		63C69E591C7ED07000556765 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E581C7ED07000556765 /* MessageUI.framework */; };
-		7AAE1E7FB22DD079FCF3110B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5ACA696C21988213E0B690 /* Pods.framework */; };
+		B6F9CF811CAE36DA004C2DC6 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9CF801CAE36DA004C2DC6 /* NetworkOperation.swift */; };
+		B6F9CF831CAE37BE004C2DC6 /* AuthenticationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9CF821CAE37BE004C2DC6 /* AuthenticationOperation.swift */; };
+		B6F9CF851CB0290C004C2DC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6F9CF841CB0290C004C2DC6 /* Main.storyboard */; };
+		B6F9CF871CB051D5004C2DC6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9CF861CB051D5004C2DC6 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +56,6 @@
 		63C69DCF1C7D039800556765 /* Ikonagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ikonagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C69DD21C7D039800556765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63C69DD41C7D039800556765 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		63C69DD71C7D039800556765 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63C69DD91C7D039800556765 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Ikonagram/Assets.xcassets; sourceTree = "<group>"; };
 		63C69DDC1C7D039800556765 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63C69DDE1C7D039800556765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,7 +114,12 @@
 		63C69E571C7ECEEF00556765 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardIOViewDelegate.h; path = Ikonagram/CardIOViewDelegate.h; sourceTree = "<group>"; };
 		63C69E581C7ED07000556765 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		63C69E5A1C7ED1EC00556765 /* ZZAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAppDelegate.h; sourceTree = "<group>"; };
-		9F5ACA696C21988213E0B690 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6F9CF7C1CAE2F2F004C2DC6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../Downloads/parse-library-1.12.0 (1)/Parse.framework"; sourceTree = "<group>"; };
+		B6F9CF7E1CAE30A2004C2DC6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../Downloads/parse-library-1.12.0 (1)/Bolts.framework"; sourceTree = "<group>"; };
+		B6F9CF801CAE36DA004C2DC6 /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
+		B6F9CF821CAE37BE004C2DC6 /* AuthenticationOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationOperation.swift; sourceTree = "<group>"; };
+		B6F9CF841CB0290C004C2DC6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B6F9CF861CB051D5004C2DC6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D2FC4DE6426A004E04E573B4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,11 +144,6 @@
 				63C69DEE1C7D800900556765 /* StoreKit.framework in Frameworks */,
 				63C69DEA1C7D7FCA00556765 /* Security.framework in Frameworks */,
 				63C69DEB1C7D7FCA00556765 /* SystemConfiguration.framework in Frameworks */,
-				7AAE1E7FB22DD079FCF3110B /* Pods.framework in Frameworks */,
-				63C69E421C7ECB5F00556765 /* libPayPalMobile.a in Frameworks */,
-				63C69E2F1C7EB74000556765 /* libCardIO.a in Frameworks */,
-				63C69E2C1C7EB74000556765 /* libopencv_imgproc.a in Frameworks */,
-				63C69E2E1C7EB74000556765 /* libopencv_core.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				63C69E301C7EB93A00556765 /* SingleImageView.xib */,
+				B6F9CF801CAE36DA004C2DC6 /* NetworkOperation.swift */,
 				63C69E311C7EB93A00556765 /* ThreeImagesView.xib */,
 				63C69E321C7EB93A00556765 /* TwoImagesView.xib */,
 				63C69E331C7EB93A00556765 /* CustomeScrollView.swift */,
@@ -193,9 +191,10 @@
 				63C69E091C7E17F800556765 /* summaryView.swift */,
 				63C69E0B1C7E181A00556765 /* SplashViews */,
 				63C69E0C1C7E197000556765 /* LoginManagement */,
-				63C69DD61C7D039800556765 /* Main.storyboard */,
 				63C69DDB1C7D039800556765 /* LaunchScreen.storyboard */,
 				63C69DDE1C7D039800556765 /* Info.plist */,
+				B6F9CF841CB0290C004C2DC6 /* Main.storyboard */,
+				B6F9CF861CB051D5004C2DC6 /* User.swift */,
 			);
 			path = Ikonagram;
 			sourceTree = "<group>";
@@ -219,10 +218,12 @@
 				63C69E551C7ECEEF00556765 /* CardIOUtilities.h */,
 				63C69E561C7ECEEF00556765 /* CardIOView.h */,
 				63C69E571C7ECEEF00556765 /* CardIOViewDelegate.h */,
+				B6F9CF7C1CAE2F2F004C2DC6 /* Parse.framework */,
 				63C69E471C7ECE5A00556765 /* libsqlite3.tbd */,
 				63C69E451C7ECE4E00556765 /* libz.tbd */,
 				63C69E411C7ECB5F00556765 /* libPayPalMobile.a */,
 				63C69E281C7EB74000556765 /* libopencv_imgproc.a */,
+				B6F9CF7E1CAE30A2004C2DC6 /* Bolts.framework */,
 				63C69E2A1C7EB74000556765 /* libopencv_core.a */,
 				63C69E2B1C7EB74000556765 /* libCardIO.a */,
 				63C69E171C7EB6D500556765 /* SafariServices.framework */,
@@ -238,7 +239,6 @@
 				63C69DED1C7D800900556765 /* StoreKit.framework */,
 				63C69DE81C7D7FCA00556765 /* Security.framework */,
 				63C69DE91C7D7FCA00556765 /* SystemConfiguration.framework */,
-				9F5ACA696C21988213E0B690 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -256,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				63C69DF91C7D871F00556765 /* LogInView.swift */,
+				B6F9CF821CAE37BE004C2DC6 /* AuthenticationOperation.swift */,
 				63C69DFB1C7D872F00556765 /* SignUpView.swift */,
 				63C69DFD1C7D873F00556765 /* SettingsView.swift */,
 				63C69DFF1C7D874F00556765 /* ResetPasswordView.swift */,
@@ -279,11 +280,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63C69DE11C7D039800556765 /* Build configuration list for PBXNativeTarget "Ikonagram" */;
 			buildPhases = (
-				61BC2905B136CD301F3E64B3 /* Check Pods Manifest.lock */,
+				D90B1F7565DD1CED83A8EC28 /* Check Pods Manifest.lock */,
 				63C69DCB1C7D039800556765 /* Sources */,
 				63C69DCC1C7D039800556765 /* Frameworks */,
 				63C69DCD1C7D039800556765 /* Resources */,
-				CB7B0F893E6ADA8FF45C9469 /* Embed Pods Frameworks */,
 				C76F51025BD1BF0DDFE4BE5E /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -307,6 +307,7 @@
 				TargetAttributes = {
 					63C69DCE1C7D039800556765 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = TYC89UNAS3;
 					};
 				};
 			};
@@ -336,30 +337,15 @@
 				63C69E391C7EB93A00556765 /* SingleImageView.xib in Resources */,
 				63C69E3B1C7EB93A00556765 /* TwoImagesView.xib in Resources */,
 				63C69DDD1C7D039800556765 /* LaunchScreen.storyboard in Resources */,
+				B6F9CF851CB0290C004C2DC6 /* Main.storyboard in Resources */,
 				63C69E3A1C7EB93A00556765 /* ThreeImagesView.xib in Resources */,
 				63C69DDA1C7D039800556765 /* Assets.xcassets in Resources */,
-				63C69DD81C7D039800556765 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		61BC2905B136CD301F3E64B3 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		C76F51025BD1BF0DDFE4BE5E /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -375,19 +361,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CB7B0F893E6ADA8FF45C9469 /* Embed Pods Frameworks */ = {
+		D90B1F7565DD1CED83A8EC28 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -405,14 +391,17 @@
 				63C69DE51C7D68D500556765 /* LoginSlides.swift in Sources */,
 				63C69E0E1C7E217E00556765 /* configs.swift in Sources */,
 				63C69E001C7D874F00556765 /* ResetPasswordView.swift in Sources */,
+				B6F9CF871CB051D5004C2DC6 /* User.swift in Sources */,
 				63C69E041C7E178200556765 /* backPostcard.swift in Sources */,
 				63C69DFE1C7D874000556765 /* SettingsView.swift in Sources */,
 				63C69E3E1C7EB93A00556765 /* ThreeImagesView.swift in Sources */,
 				63C69E3C1C7EB93A00556765 /* CustomeScrollView.swift in Sources */,
 				63C69DFA1C7D871F00556765 /* LogInView.swift in Sources */,
+				B6F9CF831CAE37BE004C2DC6 /* AuthenticationOperation.swift in Sources */,
 				63C69DD31C7D039800556765 /* AppDelegate.swift in Sources */,
 				63C69E0A1C7E17F800556765 /* summaryView.swift in Sources */,
 				63C69E061C7E17A400556765 /* selectContacts.swift in Sources */,
+				B6F9CF811CAE36DA004C2DC6 /* NetworkOperation.swift in Sources */,
 				63C69E021C7E171000556765 /* frontPostcard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,14 +409,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		63C69DD61C7D039800556765 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63C69DD71C7D039800556765 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		63C69DDB1C7D039800556765 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -526,6 +507,8 @@
 			baseConfigurationReference = D2FC4DE6426A004E04E573B4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Ikonagram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -536,6 +519,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kroleo.Ikona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ikonagram/Ikonagram-Bridging-Header.h";
 			};
 			name = Debug;
@@ -545,6 +529,8 @@
 			baseConfigurationReference = 17394131A1B9ED164F3D89F2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Ikonagram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -555,6 +541,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kroleo.Ikona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ikonagram/Ikonagram-Bridging-Header.h";
 			};
 			name = Release;

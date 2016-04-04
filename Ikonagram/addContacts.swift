@@ -7,12 +7,19 @@
 //
 
 import UIKit
-import Parse
+
 
 class addContacts: UIViewController {
     
-    @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var address: UITextField!
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var street: UITextField!
+    @IBOutlet weak var city: UITextField!
+    @IBOutlet weak var state: UITextField!
+    @IBOutlet weak var zip: UITextField!
+    @IBOutlet weak var nation: UITextField!
+    
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,13 +43,11 @@ class addContacts: UIViewController {
         if let navigationController = self.navigationController
         {
             navigationController.popViewControllerAnimated(true)
+            let contactOperation = AuthenticationOperation(url: NSURL(string:"http://45.55.37.26:3000/ios_add_contact")!)
+            contactOperation.addContact(self.user!.id, firstName: firstName.text!, lastName: lastName.text!, street: street.text!, city: city.text!, zip: zip.text!, nation: nation.text!, state: state.text!,completionHandler: {
+                
+            })
         }
-        PFUser.currentUser()?.addObject(name.text!, forKey: "contactNames")
-        PFUser.currentUser()?.saveInBackground()
-        contacts.append(name.text!)
-        PFUser.currentUser()?.addObject(address.text!, forKey: "contactAddresses")
-        PFUser.currentUser()?.saveInBackground()
-        //navigationController?.popViewControllerAnimated(true)
-
+        
     }
 }

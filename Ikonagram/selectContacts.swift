@@ -7,20 +7,19 @@
 //
 
 import UIKit
-import Parse
-var contacts: [String]!
 
 class selectContacts: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    var user: User?
+    var text: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        contacts = PFUser.currentUser()?.objectForKey("contactNames") as! Array
-        //        contacts = ["some name","another name"]
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -33,8 +32,10 @@ class selectContacts: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let contact = user!.contacts![indexPath.row] as? NSDictionary
+        let name = "\(contact!["first_name"]!) \(contact!["last_name"]!)"
         
-        cell.textLabel?.text = contacts[indexPath.row]
+        cell.textLabel?.text = name
         
         if cell.accessoryType == .None {
             
@@ -49,7 +50,7 @@ class selectContacts: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
+        return user!.contacts!.count
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -69,6 +70,19 @@ class selectContacts: UIViewController, UITableViewDataSource, UITableViewDelega
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "addContacts"{
+            let destination = segue.destinationViewController as? addContacts
+            destination!.user = self.user
+        }
+        if segue.identifier == "toSummary"{
+            let destination = segue.destinationViewController as? summaryView
+            destination!.user = self.user
+            destination!.finalText = self.text
+            print(self.text)
+        }
     }
     
     

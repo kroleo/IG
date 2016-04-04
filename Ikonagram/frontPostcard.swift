@@ -11,7 +11,6 @@ var previewImage : UIImage?
 class frontPostcard: UIViewController, UIImagePickerControllerDelegate ,UINavigationControllerDelegate{
     
     @IBOutlet weak var CollectionView: UIView!
-    
     var CurrentMode :Int = 1
     enum collectionMode: Int {
         case SingleMode = 1
@@ -22,6 +21,7 @@ class frontPostcard: UIViewController, UIImagePickerControllerDelegate ,UINaviga
     var twoImages_View : TwoImagesView?
     var threeImages_View : ThreeImagesView?
     var previewImageSize : CGSize!
+    var user: User?
     
     @IBAction func toStep2(sender: AnyObject) {
         
@@ -124,6 +124,17 @@ class frontPostcard: UIViewController, UIImagePickerControllerDelegate ,UINaviga
         UIGraphicsEndImageContext();
         
         return newImage;
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "settingsSegue" {
+            let destination = segue.destinationViewController as? SettingsView
+            destination!.user = self.user
+        }
+        if segue.identifier == "backPostcard"{
+            let destination = segue.destinationViewController as? backPostcard
+            destination!.user = self.user
+        }
     }
     
     

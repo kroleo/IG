@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Parse
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,18 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        Parse.enableLocalDatastore()
         
-        // Initialize Parse.
-        Parse.setApplicationId("EXeJu2BrcEQuutkcJk1Ds17wyTgXZ03NhXQO0SGj", clientKey: "UcrcedaVS0ido4FyUe8E9seLPCqwF6CkjgdWSGFY")
-        
-        // [Optional] Track statistics around application opens.
-        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
-        
-//        self.storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle());
-//        if PFUser.currentUser() != nil {
-//            self.window?.rootViewController = self.storyboard?.instantiateViewControllerWithIdentifier("frontPostcard");
-//        }
         
         
         return true

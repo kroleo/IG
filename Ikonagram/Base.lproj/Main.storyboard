@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="7Nz-XZ-hzv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Sm4-mh-won">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -266,7 +266,7 @@
                                             <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Sm4-mh-won" kind="modal" id="TQM-fF-Z9P"/>
+                                            <segue destination="Sm4-mh-won" kind="modal" identifier="toLogin" id="TQM-fF-Z9P"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -570,7 +570,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="3G6-yt-ac0">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3G6-yt-ac0" id="voc-OZ-3m6">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -877,6 +877,7 @@
                     <connections>
                         <outlet property="passwordField" destination="OoE-kZ-2WV" id="zjw-XC-cSr"/>
                         <outlet property="usernameField" destination="xkI-cI-Ilo" id="Prg-n7-Aa0"/>
+                        <segue destination="jcQ-UU-HE3" kind="modal" identifier="loginToPostcard" id="Jyz-Po-sCe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OKb-xN-BgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -931,5 +932,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="TQM-fF-Z9P"/>
         <segue reference="ugS-Tb-4Dc"/>
+        <segue reference="Jyz-Po-sCe"/>
     </inferredMetricsTieBreakers>
 </document>

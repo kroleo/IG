@@ -17,6 +17,7 @@ class ThreeImagesView: UIView,UIImagePickerControllerDelegate,UINavigationContro
     @IBOutlet weak var btn_addImage1: UIButton!
     @IBOutlet weak var btn_addImage2: UIButton!
     @IBOutlet weak var btn_addImage3: UIButton!
+    
     var selectedScrollView :CustomeScrollView!
     var selectedButton : UIButton!
     override func drawRect(rect: CGRect) {
