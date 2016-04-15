@@ -45,6 +45,7 @@
 		63C69E461C7ECE4E00556765 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E451C7ECE4E00556765 /* libz.tbd */; };
 		63C69E481C7ECE5A00556765 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E471C7ECE5A00556765 /* libsqlite3.tbd */; };
 		63C69E591C7ED07000556765 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E581C7ED07000556765 /* MessageUI.framework */; };
+		B60CDCC51CBE0B190086B730 /* Postcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CDCC41CBE0B190086B730 /* Postcard.swift */; };
 		B6F9CF811CAE36DA004C2DC6 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9CF801CAE36DA004C2DC6 /* NetworkOperation.swift */; };
 		B6F9CF831CAE37BE004C2DC6 /* AuthenticationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9CF821CAE37BE004C2DC6 /* AuthenticationOperation.swift */; };
 		B6F9CF851CB0290C004C2DC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6F9CF841CB0290C004C2DC6 /* Main.storyboard */; };
@@ -114,6 +115,7 @@
 		63C69E571C7ECEEF00556765 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardIOViewDelegate.h; path = Ikonagram/CardIOViewDelegate.h; sourceTree = "<group>"; };
 		63C69E581C7ED07000556765 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		63C69E5A1C7ED1EC00556765 /* ZZAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAppDelegate.h; sourceTree = "<group>"; };
+		B60CDCC41CBE0B190086B730 /* Postcard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Postcard.swift; sourceTree = "<group>"; };
 		B6F9CF7C1CAE2F2F004C2DC6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../Downloads/parse-library-1.12.0 (1)/Parse.framework"; sourceTree = "<group>"; };
 		B6F9CF7E1CAE30A2004C2DC6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../Downloads/parse-library-1.12.0 (1)/Bolts.framework"; sourceTree = "<group>"; };
 		B6F9CF801CAE36DA004C2DC6 /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				63C69DDE1C7D039800556765 /* Info.plist */,
 				B6F9CF841CB0290C004C2DC6 /* Main.storyboard */,
 				B6F9CF861CB051D5004C2DC6 /* User.swift */,
+				B60CDCC41CBE0B190086B730 /* Postcard.swift */,
 			);
 			path = Ikonagram;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B60CDCC51CBE0B190086B730 /* Postcard.swift in Sources */,
 				63C69E3F1C7EB93A00556765 /* TwoImagesView.swift in Sources */,
 				63C69E3D1C7EB93A00556765 /* SingleImageView.swift in Sources */,
 				63C69DD51C7D039800556765 /* SplashView.swift in Sources */,
@@ -510,7 +514,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Ikonagram/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -532,7 +536,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Ikonagram/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

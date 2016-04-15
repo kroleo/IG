@@ -13,7 +13,9 @@ class selectContacts: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     var user: User?
     var text: String?
-
+    var image: UIImage?
+    var postcard: Postcard?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -26,10 +28,22 @@ class selectContacts: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
+    /*
+    Action that will send user to add contacts page
+    */
+    @IBAction func toAddContacts(sender: AnyObject) {
+        self.performSegueWithIdentifier("addContacts", sender: sender)
+    }
+    
+   
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
+    @IBAction func toSummary(sender: AnyObject) {
+        performSegueWithIdentifier("toSummary", sender: sender)
+    }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         let contact = user!.contacts![indexPath.row] as? NSDictionary
@@ -81,7 +95,8 @@ class selectContacts: UIViewController, UITableViewDataSource, UITableViewDelega
             let destination = segue.destinationViewController as? summaryView
             destination!.user = self.user
             destination!.finalText = self.text
-            print(self.text)
+            destination!.theImage = self.image
+            destination!.postcard = self.postcard
         }
     }
     

@@ -27,6 +27,7 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <accessibility key="accessibilityConfiguration" identifier="singleImageView"/>
             <constraints>
                 <constraint firstItem="9Wd-kZ-e3b" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="8EW-qA-if4"/>
                 <constraint firstItem="3vy-x1-vc6" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="9xJ-bo-XeX"/>

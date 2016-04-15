@@ -11,6 +11,7 @@ import UIKit
 
 class LogInView: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var invalidLoginLabel: UILabel!
     @IBOutlet weak var passwordField: UITextField!
     var user: User?
     
@@ -37,6 +38,7 @@ class LogInView: UIViewController, UITextFieldDelegate {
         usernameField.delegate = self
         passwordField.delegate = self
         passwordField.secureTextEntry = true
+        self.invalidLoginLabel.text = ""
         // Do any additional setup after loading the view.
     }
     
@@ -52,10 +54,9 @@ class LogInView: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
-        if segue.identifier=="loginToPostcard" {
-            let destination = segue.destinationViewController as? UINavigationController
-                let stepOne = destination?.viewControllers[0] as? frontPostcard
-                stepOne!.user = self.user
+        if segue.identifier=="toFrontPostcard" {
+            let destination = segue.destinationViewController as? frontPostcard
+            destination!.user = self.user
             
         }
     }
@@ -83,14 +84,18 @@ class LogInView: UIViewController, UITextFieldDelegate {
         let login = AuthenticationOperation(url: NSURL(string:"http://45.55.37.26:3000/ios_login")!)
         login.logIn(email!, password: password!){ (let loginUser) in
             //Assign the user to be passed around
-            self.user = loginUser
-            //perform segue on main thread
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("navController")
-               let stepOne =  viewController.childViewControllers.first as? frontPostcard
-                stepOne?.user = self.user
-                self.presentViewController(viewController, animated: true, completion: nil)
-            })
+            if loginUser != nil{
+                self.user = loginUser
+                //perform segue on main thread
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.performSegueWithIdentifier("toFrontPostcard", sender: sender)
+                })
+            }
+            else{
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.invalidLoginLabel.text = "Failed Login"
+                })
+            }
         }
         //Validate Email which is username
                 

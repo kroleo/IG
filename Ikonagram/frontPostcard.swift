@@ -17,11 +17,13 @@ class frontPostcard: UIViewController, UIImagePickerControllerDelegate ,UINaviga
         case DoubleMode = 2
         case TripleMode = 3
     }
-    var singleimage_view :SingleImageView?
-    var twoImages_View : TwoImagesView?
-    var threeImages_View : ThreeImagesView?
-    var previewImageSize : CGSize!
+    var singleimage_view: SingleImageView?
+    var twoImages_View: TwoImagesView?
+    var threeImages_View: ThreeImagesView?
+    var previewImageSize: CGSize!
     var user: User?
+    var postcard: Postcard?
+    var previewImage: UIImage?
     
     @IBAction func toStep2(sender: AnyObject) {
         
@@ -29,12 +31,22 @@ class frontPostcard: UIViewController, UIImagePickerControllerDelegate ,UINaviga
         CollectionView.drawViewHierarchyInRect(CGRectMake(0,0,CollectionView.bounds.size.width,CollectionView.bounds.size.height), afterScreenUpdates: true)
         previewImage = UIGraphicsGetImageFromCurrentImageContext();
         previewImage = self.scaleImageToSize(previewImageSize, sourceImage: previewImage!)
+        self.previewImage = previewImage!
+        self.performSegueWithIdentifier("backPostcard", sender: sender)
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        if self.user != nil{
+            print("We have a user")
+        }
+        else{
+            print("No user")
+        }
         previewImageSize = CGSizeMake(861, 528)
         self.addSingleModeView()
+        
+        
     }
     
     @IBAction func btn_one(sender: AnyObject) {
@@ -134,6 +146,8 @@ class frontPostcard: UIViewController, UIImagePickerControllerDelegate ,UINaviga
         if segue.identifier == "backPostcard"{
             let destination = segue.destinationViewController as? backPostcard
             destination!.user = self.user
+            self.postcard = Postcard(first: self.previewImage!)
+            destination!.postcard = self.postcard
         }
     }
     

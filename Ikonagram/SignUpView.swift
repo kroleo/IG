@@ -12,6 +12,7 @@ import UIKit
 
 
 class SignUpView: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var failedSignUp: UILabel!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
@@ -34,6 +35,7 @@ class SignUpView: UIViewController, UITextFieldDelegate {
         lastNameField.delegate = self
         passwordField.delegate = self
         passwordField.secureTextEntry = true
+        self.failedSignUp.text = ""
         // Do any additional setup after loading the view.
     }
     
@@ -71,11 +73,19 @@ class SignUpView: UIViewController, UITextFieldDelegate {
         if isValidEmail(finalEmail){
             //This creates a authentication network operation which will attempt to sign the user up
             let signUpTask = AuthenticationOperation(url: NSURL(string:"http://45.55.37.26:3000/ios_signup")!)
-            signUpTask.signUp( firstName!, lastName: lastName!, password: password!, email: finalEmail,completionHandler: {
-                //Perform this callback upon successful sign up. This puts it on the main thread
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.performSegueWithIdentifier("signupToLogin", sender: sender)
-                })
+            signUpTask.signUp( firstName!, lastName: lastName!, password: password!, email: finalEmail,completionHandler: {boolean in
+                if boolean == true{
+                    //Perform this callback upon successful sign up. This puts it on the main thread
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.navigationController?.popViewControllerAnimated(true)
+                    })
+                }
+                else{
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.failedSignUp.text = "Failed Signup"
+                    })
+                    
+                }
                 
             })
             
@@ -86,6 +96,10 @@ class SignUpView: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func backToLogin(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+        
+    }
     
     // MARK: - Navigation
     

@@ -15,14 +15,15 @@ class summaryView: UIViewController{
 
     @IBOutlet weak var text: UILabel!
     
+    var theImage: UIImage?
     var finalText: String?
-    
+    var postcard: Postcard?
     var user: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(finalText)
-        text.text = finalText!
+        text.text = self.postcard?.message
+        image.image = self.postcard?.image
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,8 +33,8 @@ class summaryView: UIViewController{
     
     
     @IBAction func pay(sender: UIButton) {
-        
-        
+        let picturePost = AuthenticationOperation(url: NSURL(string:"http://45.55.37.26:3000/ios_post_photo")!)
+        picturePost.postPhoto((self.postcard?.image!)!, user: self.user!,message: self.postcard!.message!)
     }
 
 }
