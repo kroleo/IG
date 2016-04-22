@@ -13,7 +13,7 @@ struct User{
     let lastName: String
     let email: String
     let id: Int
-    var contacts: NSArray?
+    var contacts: [Contact]
     
     //This initializer will take in information returned from the login step
     init(dictionary: [String: AnyObject?]){
@@ -21,10 +21,26 @@ struct User{
         self.lastName = dictionary["lastName"] as! String
         self.email = dictionary["email"] as! String
         self.id = dictionary["id"] as! Int
-        //contacts = nil
+        contacts = []
     }
     
+    //This adds contact to the users contacts array
     mutating func add_contacts(contactArray: NSArray){
-        contacts = contactArray
+        for i in contactArray{
+            let newContact = Contact(contact: i as! NSDictionary)
+            self.contacts.append(newContact)
+        }
+    }
+    
+    //This function can find contacts in the array by name and return their id
+    func find_by_full_name(search_name: String)->Contact?{
+        for i in contacts{
+            if search_name == i.full_name {
+                //return the contact if contact found
+                return i
+            }
+        }
+        //Return nil if not found
+        return nil
     }
 }

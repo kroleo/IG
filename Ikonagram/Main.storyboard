@@ -183,7 +183,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jm8-B5-YHg"/>
+                    <navigationItem key="navigationItem" id="jm8-B5-YHg">
+                        <barButtonItem key="backBarButtonItem" title="Step 1" id="Nin-Li-wSP"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="userNameLabel" destination="mIA-zv-Hbx" id="Gbi-bq-18t"/>
                     </connections>
@@ -341,7 +343,6 @@
                                 </state>
                                 <connections>
                                     <action selector="btn_one:" destination="jcQ-UU-HE3" eventType="touchUpInside" id="PkM-oK-JIz"/>
-                                    <segue destination="Hwd-tB-qZc" kind="push" identifier="backPostcard" id="WcA-BJ-Mrz"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="OIB-FH-brB" userLabel="view2">
@@ -403,7 +404,6 @@
                                 </state>
                                 <connections>
                                     <action selector="btn_three:" destination="jcQ-UU-HE3" eventType="touchUpInside" id="OzJ-em-tbL"/>
-                                    <segue destination="U99-0I-isw" kind="push" identifier="settingsSegue" id="3x5-3l-Tca"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Three images" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nEL-9H-zBD">
@@ -434,10 +434,16 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Select Images" id="e7V-Bi-ySP">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="0F3-CV-Cxk"/>
+                        <barButtonItem key="backBarButtonItem" title="Step 1" id="gXD-uV-thz"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="0F3-CV-Cxk">
+                            <connections>
+                                <segue destination="U99-0I-isw" kind="push" identifier="settingsSegue" id="Bf3-3j-mm1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="CollectionView" destination="NPb-NV-bjx" id="Yzb-NH-Il0"/>
+                        <segue destination="Hwd-tB-qZc" kind="push" identifier="backPostcard" id="0Ye-pm-omW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SrE-sb-idr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -530,7 +536,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Write a Message" id="EIL-Fw-3Hi">
-                        <barButtonItem key="backBarButtonItem" title="Step 1" id="YrT-63-W0O"/>
+                        <barButtonItem key="backBarButtonItem" title="Step 2" id="YrT-63-W0O"/>
                     </navigationItem>
                     <connections>
                         <outlet property="edit" destination="UoS-8U-brr" id="CsO-Da-9wj"/>
@@ -542,6 +548,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QMc-jh-NG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1641" y="59"/>
+        </scene>
+        <!--Confirmation Controller-->
+        <scene sceneID="SvH-VO-Fae">
+            <objects>
+                <viewController id="7Be-nQ-gzh" customClass="ConfirmationController" customModule="Ikonagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X8F-Mi-ll7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your card was sent!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="avC-Je-EoW">
+                                <rect key="frame" x="74" y="183" width="161" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GpX-2v-Vn8">
+                                <rect key="frame" x="130" y="399" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logout:" destination="7Be-nQ-gzh" eventType="touchUpInside" id="wzK-q4-uoi"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please allow some time for the card to be sent" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="twk-Hm-AzF">
+                                <rect key="frame" x="69" y="231" width="170" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ttS-JW-S81">
+                                <rect key="frame" x="102" y="356" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <state key="normal" title="Create Another"/>
+                                <connections>
+                                    <action selector="createAnother:" destination="7Be-nQ-gzh" eventType="touchUpInside" id="m4W-MZ-y5u"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yCs-pW-Lsh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XRX-qR-FkD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3128" y="38"/>
         </scene>
         <!--Choose Contacts-->
         <scene sceneID="F8P-jf-hJq">
@@ -602,8 +656,12 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Choose Contacts" id="85T-e0-0ld">
-                        <barButtonItem key="backBarButtonItem" title="Step 2" id="s6l-fN-8q5"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="UPZ-cS-dBW"/>
+                        <barButtonItem key="backBarButtonItem" title="Step 3" id="s6l-fN-8q5"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="UPZ-cS-dBW">
+                            <connections>
+                                <action selector="refreshView:" destination="n2p-Le-rr8" id="zDY-w0-N4e"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="ePA-aE-jsX" id="4an-pk-tBt"/>
@@ -669,11 +727,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Send" id="3E2-wa-llS">
-                        <barButtonItem key="backBarButtonItem" title="Step 3" id="oZh-nk-vVT"/>
+                        <barButtonItem key="backBarButtonItem" title="Summary" id="oZh-nk-vVT"/>
                     </navigationItem>
                     <connections>
                         <outlet property="image" destination="zoF-QV-gUG" id="LG4-ek-KVn"/>
                         <outlet property="text" destination="Zhr-br-CLE" id="NAf-fV-bDB"/>
+                        <segue destination="7Be-nQ-gzh" kind="push" identifier="toConfirmation" id="zJi-no-5vx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zW4-Az-xfY" userLabel="First Responder" sceneMemberID="firstResponder"/>

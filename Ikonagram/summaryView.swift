@@ -19,6 +19,7 @@ class summaryView: UIViewController{
     var finalText: String?
     var postcard: Postcard?
     var user: User?
+    var contacts: [Contact]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +35,15 @@ class summaryView: UIViewController{
     
     @IBAction func pay(sender: UIButton) {
         let picturePost = AuthenticationOperation(url: NSURL(string:"http://45.55.37.26:3000/ios_post_photo")!)
+        var contactIds: [Int] = []
+        if let contactList = self.contacts{
+            for i in contactList{
+                contactIds.append(i.id!)
+            }
+        }
+        print(contactIds)
         picturePost.postPhoto((self.postcard?.image!)!, user: self.user!,message: self.postcard!.message!)
+        performSegueWithIdentifier("toConfirmation", sender: sender)
     }
 
 }

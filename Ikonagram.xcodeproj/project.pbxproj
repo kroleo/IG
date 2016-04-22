@@ -45,7 +45,13 @@
 		63C69E461C7ECE4E00556765 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E451C7ECE4E00556765 /* libz.tbd */; };
 		63C69E481C7ECE5A00556765 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E471C7ECE5A00556765 /* libsqlite3.tbd */; };
 		63C69E591C7ED07000556765 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C69E581C7ED07000556765 /* MessageUI.framework */; };
+		B4C71A64D4EFD8CCE48FBE8F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FEDEFD1536DFE5B5556FFF /* Pods.framework */; };
 		B60CDCC51CBE0B190086B730 /* Postcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CDCC41CBE0B190086B730 /* Postcard.swift */; };
+		B60CDCC71CC137500086B730 /* PaymentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CDCC61CC137500086B730 /* PaymentController.swift */; };
+		B60CDCC91CC1489C0086B730 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CDCC81CC1489C0086B730 /* Contact.swift */; };
+		B6B463D01CC9B52B0011EA83 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B463CF1CC9B52B0011EA83 /* KeychainWrapper.m */; };
+		B6B463D21CC9D3920011EA83 /* messageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B463D11CC9D3920011EA83 /* messageDelegate.swift */; };
+		B6B463D41CC9EA890011EA83 /* ConfirmationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B463D31CC9EA890011EA83 /* ConfirmationController.swift */; };
 		B6F9CF811CAE36DA004C2DC6 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9CF801CAE36DA004C2DC6 /* NetworkOperation.swift */; };
 		B6F9CF831CAE37BE004C2DC6 /* AuthenticationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9CF821CAE37BE004C2DC6 /* AuthenticationOperation.swift */; };
 		B6F9CF851CB0290C004C2DC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6F9CF841CB0290C004C2DC6 /* Main.storyboard */; };
@@ -115,7 +121,14 @@
 		63C69E571C7ECEEF00556765 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardIOViewDelegate.h; path = Ikonagram/CardIOViewDelegate.h; sourceTree = "<group>"; };
 		63C69E581C7ED07000556765 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		63C69E5A1C7ED1EC00556765 /* ZZAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAppDelegate.h; sourceTree = "<group>"; };
+		66FEDEFD1536DFE5B5556FFF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60CDCC41CBE0B190086B730 /* Postcard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Postcard.swift; sourceTree = "<group>"; };
+		B60CDCC61CC137500086B730 /* PaymentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentController.swift; sourceTree = "<group>"; };
+		B60CDCC81CC1489C0086B730 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		B6B463CE1CC9B52B0011EA83 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainWrapper.h; path = ../../../Downloads/KeychainWrapper/KeychainWrapper.h; sourceTree = "<group>"; };
+		B6B463CF1CC9B52B0011EA83 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainWrapper.m; path = ../../../Downloads/KeychainWrapper/KeychainWrapper.m; sourceTree = "<group>"; };
+		B6B463D11CC9D3920011EA83 /* messageDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = messageDelegate.swift; sourceTree = "<group>"; };
+		B6B463D31CC9EA890011EA83 /* ConfirmationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationController.swift; sourceTree = "<group>"; };
 		B6F9CF7C1CAE2F2F004C2DC6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../Downloads/parse-library-1.12.0 (1)/Parse.framework"; sourceTree = "<group>"; };
 		B6F9CF7E1CAE30A2004C2DC6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../Downloads/parse-library-1.12.0 (1)/Bolts.framework"; sourceTree = "<group>"; };
 		B6F9CF801CAE36DA004C2DC6 /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
@@ -146,6 +159,7 @@
 				63C69DEE1C7D800900556765 /* StoreKit.framework in Frameworks */,
 				63C69DEA1C7D7FCA00556765 /* Security.framework in Frameworks */,
 				63C69DEB1C7D7FCA00556765 /* SystemConfiguration.framework in Frameworks */,
+				B4C71A64D4EFD8CCE48FBE8F /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +195,8 @@
 				63C69E331C7EB93A00556765 /* CustomeScrollView.swift */,
 				63C69E341C7EB93A00556765 /* Ikonagram-Bridging-Header.h */,
 				63C69E5A1C7ED1EC00556765 /* ZZAppDelegate.h */,
+				B6B463CE1CC9B52B0011EA83 /* KeychainWrapper.h */,
+				B6B463CF1CC9B52B0011EA83 /* KeychainWrapper.m */,
 				63C69E351C7EB93A00556765 /* SingleImageView.swift */,
 				63C69E361C7EB93A00556765 /* ThreeImagesView.swift */,
 				63C69E371C7EB93A00556765 /* TwoImagesView.swift */,
@@ -196,8 +212,12 @@
 				63C69DDB1C7D039800556765 /* LaunchScreen.storyboard */,
 				63C69DDE1C7D039800556765 /* Info.plist */,
 				B6F9CF841CB0290C004C2DC6 /* Main.storyboard */,
+				B60CDCC61CC137500086B730 /* PaymentController.swift */,
 				B6F9CF861CB051D5004C2DC6 /* User.swift */,
+				B6B463D31CC9EA890011EA83 /* ConfirmationController.swift */,
+				B60CDCC81CC1489C0086B730 /* Contact.swift */,
 				B60CDCC41CBE0B190086B730 /* Postcard.swift */,
+				B6B463D11CC9D3920011EA83 /* messageDelegate.swift */,
 			);
 			path = Ikonagram;
 			sourceTree = "<group>";
@@ -242,6 +262,7 @@
 				63C69DED1C7D800900556765 /* StoreKit.framework */,
 				63C69DE81C7D7FCA00556765 /* Security.framework */,
 				63C69DE91C7D7FCA00556765 /* SystemConfiguration.framework */,
+				66FEDEFD1536DFE5B5556FFF /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -288,6 +309,7 @@
 				63C69DCC1C7D039800556765 /* Frameworks */,
 				63C69DCD1C7D039800556765 /* Resources */,
 				C76F51025BD1BF0DDFE4BE5E /* Copy Pods Resources */,
+				294EAAC8CABE99A9770D0F10 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -349,6 +371,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		294EAAC8CABE99A9770D0F10 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C76F51025BD1BF0DDFE4BE5E /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -389,14 +426,18 @@
 				B60CDCC51CBE0B190086B730 /* Postcard.swift in Sources */,
 				63C69E3F1C7EB93A00556765 /* TwoImagesView.swift in Sources */,
 				63C69E3D1C7EB93A00556765 /* SingleImageView.swift in Sources */,
+				B6B463D21CC9D3920011EA83 /* messageDelegate.swift in Sources */,
 				63C69DD51C7D039800556765 /* SplashView.swift in Sources */,
+				B60CDCC91CC1489C0086B730 /* Contact.swift in Sources */,
 				63C69DFC1C7D872F00556765 /* SignUpView.swift in Sources */,
 				63C69E081C7E17B300556765 /* addContacts.swift in Sources */,
 				63C69DE51C7D68D500556765 /* LoginSlides.swift in Sources */,
 				63C69E0E1C7E217E00556765 /* configs.swift in Sources */,
+				B6B463D01CC9B52B0011EA83 /* KeychainWrapper.m in Sources */,
 				63C69E001C7D874F00556765 /* ResetPasswordView.swift in Sources */,
 				B6F9CF871CB051D5004C2DC6 /* User.swift in Sources */,
 				63C69E041C7E178200556765 /* backPostcard.swift in Sources */,
+				B6B463D41CC9EA890011EA83 /* ConfirmationController.swift in Sources */,
 				63C69DFE1C7D874000556765 /* SettingsView.swift in Sources */,
 				63C69E3E1C7EB93A00556765 /* ThreeImagesView.swift in Sources */,
 				63C69E3C1C7EB93A00556765 /* CustomeScrollView.swift in Sources */,
@@ -404,6 +445,7 @@
 				B6F9CF831CAE37BE004C2DC6 /* AuthenticationOperation.swift in Sources */,
 				63C69DD31C7D039800556765 /* AppDelegate.swift in Sources */,
 				63C69E0A1C7E17F800556765 /* summaryView.swift in Sources */,
+				B60CDCC71CC137500086B730 /* PaymentController.swift in Sources */,
 				63C69E061C7E17A400556765 /* selectContacts.swift in Sources */,
 				B6F9CF811CAE36DA004C2DC6 /* NetworkOperation.swift in Sources */,
 				63C69E021C7E171000556765 /* frontPostcard.swift in Sources */,

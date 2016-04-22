@@ -4,12 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Bolts.xcscheme</key>
+		<key>Braintree-Braintree-Drop-In-Localization.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Parse.xcscheme</key>
+		<key>Braintree-Braintree-UI-Localization.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Braintree.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2C8AA1BAF35413BDB954A1DF93576ED1</key>
+		<key>0AE2B1D53B2D66B3CBEEA1462EB93F8D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>52D82BFDD1E808D9CB257431922C1EE4</key>
+		<key>718D302F2AF22AAB733FDC961931108D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>98F4912D748E09626D1B314043FB9EB3</key>
+		<key>E97BDDCCFF16A910C000E8B1D89C9277</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE3905A5B68C6865B7D7F8928BB719DC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

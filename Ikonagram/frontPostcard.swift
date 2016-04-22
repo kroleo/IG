@@ -10,6 +10,7 @@ import UIKit
 var previewImage : UIImage?
 class frontPostcard: UIViewController, UIImagePickerControllerDelegate ,UINavigationControllerDelegate{
     
+    var message: String?
     @IBOutlet weak var CollectionView: UIView!
     var CurrentMode :Int = 1
     enum collectionMode: Int {
@@ -25,6 +26,9 @@ class frontPostcard: UIViewController, UIImagePickerControllerDelegate ,UINaviga
     var postcard: Postcard?
     var previewImage: UIImage?
     
+    @IBAction func toSettings(sender: AnyObject) {
+        performSegueWithIdentifier("settingsSegue", sender: sender)
+    }
     @IBAction func toStep2(sender: AnyObject) {
         
         UIGraphicsBeginImageContextWithOptions(CGSizeMake(CollectionView.bounds.size.width, CollectionView.bounds.size.height), false, 0);
@@ -37,12 +41,7 @@ class frontPostcard: UIViewController, UIImagePickerControllerDelegate ,UINaviga
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        if self.user != nil{
-            print("We have a user")
-        }
-        else{
-            print("No user")
-        }
+        self.navigationItem.hidesBackButton = true
         previewImageSize = CGSizeMake(861, 528)
         self.addSingleModeView()
         
@@ -146,8 +145,11 @@ class frontPostcard: UIViewController, UIImagePickerControllerDelegate ,UINaviga
         if segue.identifier == "backPostcard"{
             let destination = segue.destinationViewController as? backPostcard
             destination!.user = self.user
-            self.postcard = Postcard(first: self.previewImage!)
+            self.postcard = Postcard(first: self.previewImage)
             destination!.postcard = self.postcard
+            if(self.message != nil){
+                destination!.message.text = self.message
+            }
         }
     }
     

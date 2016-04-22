@@ -96,7 +96,6 @@ class AuthenticationOperation: NetWorkOperation{
         let request = NSURLRequest(URL: self.url)
         let task = self.session.dataTaskWithRequest(request){(let data, let resp, let error) in
             if let JSONData = try!NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSArray{
-                print(JSONData)
                 completionHandler(JSONData)
             }
         }

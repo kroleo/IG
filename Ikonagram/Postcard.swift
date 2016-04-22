@@ -20,7 +20,7 @@ class Postcard{
     var message: String?
     
     //Single image
-    init(first: UIImage){
+    init(first: UIImage?){
         image = first
         message = nil
     }

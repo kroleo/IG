@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class addContacts: UIViewController {
     
     @IBOutlet weak var firstName: UITextField!
@@ -23,7 +22,13 @@ class addContacts: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.firstName.autocorrectionType = UITextAutocorrectionType.No
+        self.lastName.autocorrectionType = UITextAutocorrectionType.No
+        self.street.autocorrectionType = UITextAutocorrectionType.No
+        self.city.autocorrectionType = UITextAutocorrectionType.No
+        self.state.autocorrectionType = UITextAutocorrectionType.No
+        self.zip.autocorrectionType = UITextAutocorrectionType.No
+        self.nation.autocorrectionType = UITextAutocorrectionType.No
         // Do any additional setup after loading the view.
     }
     
@@ -46,7 +51,9 @@ class addContacts: UIViewController {
             let contactOperation = AuthenticationOperation(url: NSURL(string:"http://45.55.37.26:3000/ios_add_contact")!)
             contactOperation.addContact(self.user!.id, firstName: firstName.text!, lastName: lastName.text!, street: street.text!, city: city.text!, zip: zip.text!, nation: nation.text!, state: state.text!,completionHandler: {
                 
+                
             })
+            
         }
         
     }

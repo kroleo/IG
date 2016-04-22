@@ -30,10 +30,9 @@ class SettingsView: UIViewController {
     }
     
     @IBAction func logOutAction(sender: AnyObject){
-        
-        // Send a request to log PFUser.logOut()
-        
-                
+        self.user = nil
+        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "signedIn")
+        self.navigationController?.popToRootViewControllerAnimated(false)
     }
     
     /*

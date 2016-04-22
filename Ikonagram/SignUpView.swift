@@ -35,6 +35,11 @@ class SignUpView: UIViewController, UITextFieldDelegate {
         lastNameField.delegate = self
         passwordField.delegate = self
         passwordField.secureTextEntry = true
+        //This will set all the fields to autocorrect off
+        self.emailField.autocorrectionType = UITextAutocorrectionType.No
+        self.firstNameField.autocorrectionType = UITextAutocorrectionType.No
+        self.lastNameField.autocorrectionType = UITextAutocorrectionType.No
+        self.passwordField.autocorrectionType = UITextAutocorrectionType.No
         self.failedSignUp.text = ""
         // Do any additional setup after loading the view.
     }

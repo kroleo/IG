@@ -1,19 +1,27 @@
 PODS:
-  - Bolts (1.7.0):
-    - Bolts/AppLinks (= 1.7.0)
-    - Bolts/Tasks (= 1.7.0)
-  - Bolts/AppLinks (1.7.0):
-    - Bolts/Tasks
-  - Bolts/Tasks (1.7.0)
-  - Parse (1.13.0):
-    - Bolts/Tasks (~> 1.6)
+  - Braintree (4.2.3):
+    - Braintree/Card (= 4.2.3)
+    - Braintree/Core (= 4.2.3)
+    - Braintree/PayPal (= 4.2.3)
+    - Braintree/UI (= 4.2.3)
+  - Braintree/Card (4.2.3):
+    - Braintree/Core
+  - Braintree/Core (4.2.3)
+  - Braintree/PayPal (4.2.3):
+    - Braintree/Core
+    - Braintree/PayPalOneTouch
+  - Braintree/PayPalDataCollector (4.2.3)
+  - Braintree/PayPalOneTouch (4.2.3):
+    - Braintree/Core
+    - Braintree/PayPalDataCollector
+  - Braintree/UI (4.2.3):
+    - Braintree/Card
+    - Braintree/Core
 
 DEPENDENCIES:
-  - Bolts
-  - Parse
+  - Braintree
 
 SPEC CHECKSUMS:
-  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
-  Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
+  Braintree: 05791bdc6d43c3faf2f802dd2d687e9f619f7f57
 
 COCOAPODS: 0.39.0

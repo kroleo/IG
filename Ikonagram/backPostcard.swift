@@ -60,6 +60,11 @@ class backPostcard: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
+    //Send message back when popping view
+    override func viewDidDisappear(animated: Bool) {
+        
+    }
+    
 
     @IBAction func toStep3(sender: UIButton) {
         self.postcard!.addMessage(self.edit!.text!)

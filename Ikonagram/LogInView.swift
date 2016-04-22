@@ -7,12 +7,13 @@
 //
 
 import UIKit
-
+import Security
 
 class LogInView: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var invalidLoginLabel: UILabel!
     @IBOutlet weak var passwordField: UITextField!
+    let MyKeyChainWrapper = KeychainWrapper()
     var user: User?
     
     
@@ -35,10 +36,24 @@ class LogInView: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.usernameField.autocorrectionType = UITextAutocorrectionType.No
+        self.passwordField.autocorrectionType = UITextAutocorrectionType.No
         usernameField.delegate = self
         passwordField.delegate = self
         passwordField.secureTextEntry = true
+ 
         self.invalidLoginLabel.text = ""
+        if NSUserDefaults.standardUserDefaults().boolForKey("signedIn"){
+            self.usernameField.text = NSUserDefaults.standardUserDefaults().objectForKey("username") as? String
+            print("User found")
+            self.passwordField.text = MyKeyChainWrapper.myObjectForKey(kSecValueData) as? String
+            loginAction(self)
+        }
+ 
+        else{
+            print("user not found")
+        }
+ 
         // Do any additional setup after loading the view.
     }
     
@@ -87,7 +102,16 @@ class LogInView: UIViewController, UITextFieldDelegate {
             if loginUser != nil{
                 self.user = loginUser
                 //perform segue on main thread
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in 
+                    /*If the user has not already signed in then save their log in info*/
+                   if !(NSUserDefaults.standardUserDefaults().boolForKey("signedIn")){
+                        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "signedIn")
+                        NSUserDefaults.standardUserDefaults().setObject(self.usernameField.text, forKey: "username")
+                        self.MyKeyChainWrapper.mySetObject(self.passwordField.text, forKey: kSecValueData)
+                        print("User saved")
+                    }
+ 
+                    //Else get their credentials and log in
                     self.performSegueWithIdentifier("toFrontPostcard", sender: sender)
                 })
             }
