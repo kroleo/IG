@@ -9,7 +9,7 @@
 import UIKit
 import Security
 
-class LogInView: UIViewController, UITextFieldDelegate {
+class LogInView: UIViewController, UITextFieldDelegate, LoginDelegate {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var invalidLoginLabel: UILabel!
     @IBOutlet weak var passwordField: UITextField!
@@ -33,7 +33,15 @@ class LogInView: UIViewController, UITextFieldDelegate {
         return false
     }
     
+    //This IBAction will perform a segue to the sign up page
+    @IBAction func signUp(sender: AnyObject) {
+        performSegueWithIdentifier("toSignUp", sender: sender)
+    }
     
+    //Take user to forgot password screen
+    @IBAction func forgotPassword(sender: AnyObject) {
+        performSegueWithIdentifier("toResetPassword", sender: sender)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.usernameField.autocorrectionType = UITextAutocorrectionType.No
@@ -72,7 +80,11 @@ class LogInView: UIViewController, UITextFieldDelegate {
         if segue.identifier=="toFrontPostcard" {
             let destination = segue.destinationViewController as? frontPostcard
             destination!.user = self.user
-            
+            destination!.delegate = self
+        }
+        if segue.identifier == "toSignUp"{
+            let destination = segue.destinationViewController as? SignUpView
+            destination!.delegate = self
         }
     }
 
@@ -92,7 +104,7 @@ class LogInView: UIViewController, UITextFieldDelegate {
         
     }
     
-    
+    //This will log a user in with the current credentials
     @IBAction func loginAction(sender: AnyObject) {
         let email = self.usernameField.text
         let password = self.passwordField.text
@@ -123,6 +135,26 @@ class LogInView: UIViewController, UITextFieldDelegate {
         }
         //Validate Email which is username
                 
+    }
+    
+    
+    //--DELEGATE METHODS--//
+    
+    //This will clear out the username and password fields
+    func resetFields(){
+        self.usernameField.text = ""
+        self.passwordField.text = ""
+        self.invalidLoginLabel.text = ""
+    }
+    
+    
+    
+    
+    //This will set the login fields
+    func setFields(username: String, password: String){
+        self.usernameField.text = username
+        self.passwordField.text = password
+        self.invalidLoginLabel.text = ""
     }
     
 }

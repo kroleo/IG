@@ -17,6 +17,8 @@ class SignUpView: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    
+    var delegate: LoginDelegate?
     //Make sure the password entry is blotted out
     
     
@@ -110,7 +112,12 @@ class SignUpView: UIViewController, UITextFieldDelegate {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+    }
     
+    //When the view pops off, fill in the username and password fields 
+    override func viewDidDisappear(animated: Bool) {
+        self.delegate?.setFields(self.emailField.text!, password: self.passwordField.text!)
     }
 
     

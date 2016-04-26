@@ -10,7 +10,7 @@ import Foundation
 import Braintree
 
 // MyViewController.swift
-class MyViewController: UIViewController, BTDropInViewControllerDelegate {
+class PaymentController: UIViewController, BTDropInViewControllerDelegate {
     
     // If you use a client token, you should ensure that users cannot tap the pay button
     // until the client token has been obtained from your server and used to create a BTAPIClient.
@@ -34,7 +34,7 @@ class MyViewController: UIViewController, BTDropInViewControllerDelegate {
         // In this example, we wrap it in a new, modally-presented navigation controller:
         dropInViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: UIBarButtonSystemItem.Cancel,
-            target: self, action: #selector(MyViewController.userDidCancelPayment))
+            target: self, action: #selector(PaymentController.userDidCancelPayment))
         let navigationController = UINavigationController(rootViewController: dropInViewController)
         presentViewController(navigationController, animated: true, completion: nil)
     }

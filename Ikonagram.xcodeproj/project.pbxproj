@@ -52,6 +52,9 @@
 		B6B463D01CC9B52B0011EA83 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B463CF1CC9B52B0011EA83 /* KeychainWrapper.m */; };
 		B6B463D21CC9D3920011EA83 /* messageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B463D11CC9D3920011EA83 /* messageDelegate.swift */; };
 		B6B463D41CC9EA890011EA83 /* ConfirmationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B463D31CC9EA890011EA83 /* ConfirmationController.swift */; };
+		B6B463D61CCF0CEB0011EA83 /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B463D51CCF0CEB0011EA83 /* LoginDelegate.swift */; };
+		B6B463D81CCF1B790011EA83 /* EditContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B463D71CCF1B790011EA83 /* EditContacts.swift */; };
+		B6B463DA1CCF1E920011EA83 /* EditContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B463D91CCF1E920011EA83 /* EditContactDelegate.swift */; };
 		B6F9CF811CAE36DA004C2DC6 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9CF801CAE36DA004C2DC6 /* NetworkOperation.swift */; };
 		B6F9CF831CAE37BE004C2DC6 /* AuthenticationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9CF821CAE37BE004C2DC6 /* AuthenticationOperation.swift */; };
 		B6F9CF851CB0290C004C2DC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6F9CF841CB0290C004C2DC6 /* Main.storyboard */; };
@@ -129,6 +132,9 @@
 		B6B463CF1CC9B52B0011EA83 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainWrapper.m; path = ../../../Downloads/KeychainWrapper/KeychainWrapper.m; sourceTree = "<group>"; };
 		B6B463D11CC9D3920011EA83 /* messageDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = messageDelegate.swift; sourceTree = "<group>"; };
 		B6B463D31CC9EA890011EA83 /* ConfirmationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationController.swift; sourceTree = "<group>"; };
+		B6B463D51CCF0CEB0011EA83 /* LoginDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDelegate.swift; sourceTree = "<group>"; };
+		B6B463D71CCF1B790011EA83 /* EditContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditContacts.swift; sourceTree = "<group>"; };
+		B6B463D91CCF1E920011EA83 /* EditContactDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditContactDelegate.swift; sourceTree = "<group>"; };
 		B6F9CF7C1CAE2F2F004C2DC6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../Downloads/parse-library-1.12.0 (1)/Parse.framework"; sourceTree = "<group>"; };
 		B6F9CF7E1CAE30A2004C2DC6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../Downloads/parse-library-1.12.0 (1)/Bolts.framework"; sourceTree = "<group>"; };
 		B6F9CF801CAE36DA004C2DC6 /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
@@ -198,6 +204,7 @@
 				B6B463CE1CC9B52B0011EA83 /* KeychainWrapper.h */,
 				B6B463CF1CC9B52B0011EA83 /* KeychainWrapper.m */,
 				63C69E351C7EB93A00556765 /* SingleImageView.swift */,
+				B6B463D91CCF1E920011EA83 /* EditContactDelegate.swift */,
 				63C69E361C7EB93A00556765 /* ThreeImagesView.swift */,
 				63C69E371C7EB93A00556765 /* TwoImagesView.swift */,
 				63C69DD21C7D039800556765 /* AppDelegate.swift */,
@@ -206,6 +213,7 @@
 				63C69E031C7E178200556765 /* backPostcard.swift */,
 				63C69E051C7E17A400556765 /* selectContacts.swift */,
 				63C69E071C7E17B300556765 /* addContacts.swift */,
+				B6B463D71CCF1B790011EA83 /* EditContacts.swift */,
 				63C69E091C7E17F800556765 /* summaryView.swift */,
 				63C69E0B1C7E181A00556765 /* SplashViews */,
 				63C69E0C1C7E197000556765 /* LoginManagement */,
@@ -218,6 +226,7 @@
 				B60CDCC81CC1489C0086B730 /* Contact.swift */,
 				B60CDCC41CBE0B190086B730 /* Postcard.swift */,
 				B6B463D11CC9D3920011EA83 /* messageDelegate.swift */,
+				B6B463D51CCF0CEB0011EA83 /* LoginDelegate.swift */,
 			);
 			path = Ikonagram;
 			sourceTree = "<group>";
@@ -445,10 +454,13 @@
 				B6F9CF831CAE37BE004C2DC6 /* AuthenticationOperation.swift in Sources */,
 				63C69DD31C7D039800556765 /* AppDelegate.swift in Sources */,
 				63C69E0A1C7E17F800556765 /* summaryView.swift in Sources */,
+				B6B463D81CCF1B790011EA83 /* EditContacts.swift in Sources */,
 				B60CDCC71CC137500086B730 /* PaymentController.swift in Sources */,
 				63C69E061C7E17A400556765 /* selectContacts.swift in Sources */,
 				B6F9CF811CAE36DA004C2DC6 /* NetworkOperation.swift in Sources */,
+				B6B463D61CCF0CEB0011EA83 /* LoginDelegate.swift in Sources */,
 				63C69E021C7E171000556765 /* frontPostcard.swift in Sources */,
+				B6B463DA1CCF1E920011EA83 /* EditContactDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

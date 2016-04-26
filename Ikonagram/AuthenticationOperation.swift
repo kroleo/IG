@@ -15,7 +15,6 @@ This will allow for creation of new users and objects in the database
 class AuthenticationOperation: NetWorkOperation{
     //This function handles sign ups
     func signUp(firstName: String,lastName: String, password: String, email: String, completionHandler: (val: Bool)->()){
-        print(self.url)
         //create a mutable request and set the options for the HTTP request
         let request = NSMutableURLRequest(URL: self.url)
         request.HTTPMethod = "POST"
@@ -92,7 +91,6 @@ class AuthenticationOperation: NetWorkOperation{
     
     //This function will get contacts
     func getContacts(id: Int,completionHandler: (NSArray)->()){
-        print(self.url)
         let request = NSURLRequest(URL: self.url)
         let task = self.session.dataTaskWithRequest(request){(let data, let resp, let error) in
             if let JSONData = try!NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSArray{
@@ -125,4 +123,67 @@ class AuthenticationOperation: NetWorkOperation{
         task.resume()
     }
     
+    //This function will get a client token from the server
+    func getClientToken(completionHandler: (String)->()){
+        let request = NSURLRequest(URL: self.url)
+        self.session.dataTaskWithRequest(request){ (let data, let resp, let error) in
+                let JSONData = try!NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary
+                let token = JSONData!["token"]
+                completionHandler(token! as! String)
+            }.resume()
+    
+    }
+    
+    //This functionw will allow users to edit contacts
+    func editContact(id: Int,firstName: String, lastName: String, street: String, city: String, zip: String, nation: String,state: String, contact_id: Int, completionHandler: ()->()){
+        let request = NSMutableURLRequest(URL: self.url)
+        let params = ["id":id, "first_name":firstName, "last_name":lastName,"street":street,"city":city,"zip":zip,"nation":nation, "state":state,"contact_id":contact_id]
+        request.HTTPMethod = "POST"
+        request.HTTPBody = try!NSJSONSerialization.dataWithJSONObject(params, options: [])
+        request.addValue("application/json",forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        let task = self.session.dataTaskWithRequest(request){(let data, let resp, let error) in
+            if let respHTTP = resp as? NSHTTPURLResponse{
+                if respHTTP.statusCode == 200{
+                    
+                }
+                else{
+                    
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    //THis function will handle resetting a password
+    func resetPassword(email: String,  completionHandler :(didFinish: Bool)->()){
+        //create a mutable request and set the options for the HTTP request
+        let request = NSMutableURLRequest(URL: self.url)
+        request.HTTPMethod = "POST"
+        let params = ["email":email]
+        request.HTTPBody = try!NSJSONSerialization.dataWithJSONObject(params, options: [])
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        //Create a network task on the backend and check the response for completion or failure
+        let task =  self.session.dataTaskWithRequest(request){(let data, let resp, let error) in
+            if let respHTTP =  resp as? NSHTTPURLResponse{
+                if respHTTP.statusCode == 200 {
+                    print("User created")
+                    completionHandler(didFinish: true)
+                }
+                else if(respHTTP.statusCode == 400){
+                    print("User could not save")
+                    completionHandler(didFinish: false)
+                }
+                else{
+                    completionHandler(didFinish: false)
+                    print("Bad request")
+                }
+            }
+        }
+        task.resume()
+
+    }
+    
+
 }

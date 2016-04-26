@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Braintree
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,18 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         
-        
         let pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
         pageControl.currentPageIndicatorTintColor = UIColor.whiteColor()
         //pageControl.backgroundColor = UIColor.whiteColor()
         
-        
-        
-        
-        
-        
+        BTAppSwitch.setReturnURLScheme("com.kroleo.Ikona.payments")
         return true
+
     }
     
     func applicationWillResignActive(application: UIApplication) {
@@ -57,6 +53,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        if url.scheme.localizedCaseInsensitiveCompare("com.kroleo.Ikona.payments") == .OrderedSame {
+            return BTAppSwitch.handleOpenURL(url, sourceApplication:sourceApplication)
+        }
+        return false
+    }
 }
 

@@ -13,14 +13,28 @@ class backPostcard: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var edit: UITextField!
-    
+    var delegate: MessageSender?
     var image: UIImage?
+    var myMessage: String?
     
     var user: User?
     var postcard: Postcard?
+    
+    /*These IBActions will change the font being used to edit*/
     @IBAction func font1(sender: UIButton) {
-        message.font = UIFont(name: "Chalkboard", size: 15)
+        edit.font = UIFont(name:"ChalkboardSE-Regular", size: 15)
     }
+    
+    @IBAction func font2(sender: AnyObject) {
+        edit.font = UIFont(name: "SnellRoundhand", size: 15)
+    }
+    
+    
+    @IBAction func font3(sender: AnyObject) {
+        edit.font = UIFont(name: "Futura-Medium", size: 15)
+    }
+    
+    
     @IBOutlet weak var message: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +48,9 @@ class backPostcard: UIViewController, UITextFieldDelegate {
         }
         else{
             print("No user")
+        }
+        if let msg = self.myMessage{
+            self.edit.text = msg
         }
         self.edit.delegate = self;
     }
@@ -62,7 +79,7 @@ class backPostcard: UIViewController, UITextFieldDelegate {
     
     //Send message back when popping view
     override func viewDidDisappear(animated: Bool) {
-        
+        delegate!.addMessage(self.edit.text!)
     }
     
 
@@ -73,10 +90,20 @@ class backPostcard: UIViewController, UITextFieldDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toContacts"{
-            print("Passing in the user")
             let destination = segue.destinationViewController as? selectContacts
+            self.postcard?.addFont(edit.font)
             destination!.user = self.user
             destination!.postcard = self.postcard
         }
     }
+    
+    
+}
+
+/*
+ This protocol will be used to implement 
+ a delegate for keeping track of messages
+ */
+protocol MessageSender{
+    func addMessage(message: String)
 }

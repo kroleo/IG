@@ -18,6 +18,7 @@ class Postcard{
     //Creating these images as optionals in case nothing is passed in for one
     let image: UIImage?
     var message: String?
+    var font: UIFont?
     
     //Single image
     init(first: UIImage?){
@@ -28,5 +29,10 @@ class Postcard{
     //Add a message to an existing postcard
     func addMessage(message: String){
         self.message = message
+    }
+    
+    //This will allow the font to be updated
+    func addFont(font: UIFont?){
+        self.font = font
     }
 }
