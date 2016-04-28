@@ -22,7 +22,7 @@ class ConfirmationController: UIViewController{
     }
 
     @IBAction func createAnother(sender: AnyObject) {
-        self.navigationController?.popToViewController((self.navigationController?.viewControllers[2])!, animated: false)
+        self.navigationController?.popToViewController((self.navigationController?.viewControllers[1])!, animated: false)
     }
 
     

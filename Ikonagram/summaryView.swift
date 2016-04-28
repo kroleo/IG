@@ -12,6 +12,7 @@ import Braintree
 class summaryView: UIViewController, BTDropInViewControllerDelegate {
     var braintreeClient: BTAPIClient?
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var cost: UILabel!
 
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var text: UILabel!
@@ -35,6 +36,8 @@ class summaryView: UIViewController, BTDropInViewControllerDelegate {
             print(token)
             self.braintreeClient = BTAPIClient(authorization: token)
         }
+        let costString = String(3*self.contacts!.count)
+        cost.text = "$\(costString)"
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,7 +61,7 @@ class summaryView: UIViewController, BTDropInViewControllerDelegate {
         // In this example, we wrap it in a new, modally-presented navigation controller:
         dropInViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: UIBarButtonSystemItem.Cancel,
-            target: self, action: #selector(PaymentController.userDidCancelPayment))
+            target: self, action: "PaymentController.userDidCancelPayment")
         let navigationController = UINavigationController(rootViewController: dropInViewController)
         presentViewController(navigationController, animated: true, completion: nil)
         

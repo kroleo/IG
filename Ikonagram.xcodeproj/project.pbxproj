@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630EDC411CCFDCA700F0BC7A /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 630EDC401CCFDCA700F0BC7A /* KeychainWrapper.m */; };
 		63C69DD31C7D039800556765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69DD21C7D039800556765 /* AppDelegate.swift */; };
 		63C69DD51C7D039800556765 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C69DD41C7D039800556765 /* SplashView.swift */; };
 		63C69DDA1C7D039800556765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C69DD91C7D039800556765 /* Assets.xcassets */; };
@@ -49,7 +50,6 @@
 		B60CDCC51CBE0B190086B730 /* Postcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CDCC41CBE0B190086B730 /* Postcard.swift */; };
 		B60CDCC71CC137500086B730 /* PaymentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CDCC61CC137500086B730 /* PaymentController.swift */; };
 		B60CDCC91CC1489C0086B730 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CDCC81CC1489C0086B730 /* Contact.swift */; };
-		B6B463D01CC9B52B0011EA83 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B463CF1CC9B52B0011EA83 /* KeychainWrapper.m */; };
 		B6B463D21CC9D3920011EA83 /* messageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B463D11CC9D3920011EA83 /* messageDelegate.swift */; };
 		B6B463D41CC9EA890011EA83 /* ConfirmationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B463D31CC9EA890011EA83 /* ConfirmationController.swift */; };
 		B6B463D61CCF0CEB0011EA83 /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B463D51CCF0CEB0011EA83 /* LoginDelegate.swift */; };
@@ -63,6 +63,8 @@
 
 /* Begin PBXFileReference section */
 		17394131A1B9ED164F3D89F2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		630EDC3F1CCFDCA700F0BC7A /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		630EDC401CCFDCA700F0BC7A /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		63C69DCF1C7D039800556765 /* Ikonagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ikonagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C69DD21C7D039800556765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63C69DD41C7D039800556765 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -128,8 +130,6 @@
 		B60CDCC41CBE0B190086B730 /* Postcard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Postcard.swift; sourceTree = "<group>"; };
 		B60CDCC61CC137500086B730 /* PaymentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentController.swift; sourceTree = "<group>"; };
 		B60CDCC81CC1489C0086B730 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
-		B6B463CE1CC9B52B0011EA83 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainWrapper.h; path = ../../../Downloads/KeychainWrapper/KeychainWrapper.h; sourceTree = "<group>"; };
-		B6B463CF1CC9B52B0011EA83 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainWrapper.m; path = ../../../Downloads/KeychainWrapper/KeychainWrapper.m; sourceTree = "<group>"; };
 		B6B463D11CC9D3920011EA83 /* messageDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = messageDelegate.swift; sourceTree = "<group>"; };
 		B6B463D31CC9EA890011EA83 /* ConfirmationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationController.swift; sourceTree = "<group>"; };
 		B6B463D51CCF0CEB0011EA83 /* LoginDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDelegate.swift; sourceTree = "<group>"; };
@@ -201,14 +201,14 @@
 				63C69E331C7EB93A00556765 /* CustomeScrollView.swift */,
 				63C69E341C7EB93A00556765 /* Ikonagram-Bridging-Header.h */,
 				63C69E5A1C7ED1EC00556765 /* ZZAppDelegate.h */,
-				B6B463CE1CC9B52B0011EA83 /* KeychainWrapper.h */,
-				B6B463CF1CC9B52B0011EA83 /* KeychainWrapper.m */,
 				63C69E351C7EB93A00556765 /* SingleImageView.swift */,
 				B6B463D91CCF1E920011EA83 /* EditContactDelegate.swift */,
 				63C69E361C7EB93A00556765 /* ThreeImagesView.swift */,
 				63C69E371C7EB93A00556765 /* TwoImagesView.swift */,
 				63C69DD21C7D039800556765 /* AppDelegate.swift */,
 				63C69E011C7E171000556765 /* frontPostcard.swift */,
+				630EDC3F1CCFDCA700F0BC7A /* KeychainWrapper.h */,
+				630EDC401CCFDCA700F0BC7A /* KeychainWrapper.m */,
 				63C69E0D1C7E217E00556765 /* configs.swift */,
 				63C69E031C7E178200556765 /* backPostcard.swift */,
 				63C69E051C7E17A400556765 /* selectContacts.swift */,
@@ -442,7 +442,6 @@
 				63C69E081C7E17B300556765 /* addContacts.swift in Sources */,
 				63C69DE51C7D68D500556765 /* LoginSlides.swift in Sources */,
 				63C69E0E1C7E217E00556765 /* configs.swift in Sources */,
-				B6B463D01CC9B52B0011EA83 /* KeychainWrapper.m in Sources */,
 				63C69E001C7D874F00556765 /* ResetPasswordView.swift in Sources */,
 				B6F9CF871CB051D5004C2DC6 /* User.swift in Sources */,
 				63C69E041C7E178200556765 /* backPostcard.swift in Sources */,
@@ -452,6 +451,7 @@
 				63C69E3C1C7EB93A00556765 /* CustomeScrollView.swift in Sources */,
 				63C69DFA1C7D871F00556765 /* LogInView.swift in Sources */,
 				B6F9CF831CAE37BE004C2DC6 /* AuthenticationOperation.swift in Sources */,
+				630EDC411CCFDCA700F0BC7A /* KeychainWrapper.m in Sources */,
 				63C69DD31C7D039800556765 /* AppDelegate.swift in Sources */,
 				63C69E0A1C7E17F800556765 /* summaryView.swift in Sources */,
 				B6B463D81CCF1B790011EA83 /* EditContacts.swift in Sources */,

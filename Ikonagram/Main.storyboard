@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2fm-f1-VaT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2fm-f1-VaT">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--Reset Password View-->
@@ -75,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w49-Rt-Tae" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3" y="2067"/>
+            <point key="canvasLocation" x="-435" y="1563"/>
         </scene>
         <!--Settings View-->
         <scene sceneID="s7g-oM-0gB">
@@ -126,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sca-2M-rtP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1199" y="801"/>
+            <point key="canvasLocation" x="-9" y="891"/>
         </scene>
         <!--Sign Up View-->
         <scene sceneID="ziI-c9-kLZ">
@@ -545,16 +545,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ePA-aE-jsX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" id="ePA-aE-jsX">
                                 <rect key="frame" x="0.0" y="123" width="320" height="403"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="3G6-yt-ac0">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="3G6-yt-ac0">
+                                        <rect key="frame" x="0.0" y="65" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3G6-yt-ac0" id="voc-OZ-3m6">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -676,6 +676,20 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vmj-sA-XEj">
+                                <rect key="frame" x="170" y="285" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ja2-cz-7pN">
+                                <rect key="frame" x="129" y="285" width="63" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -683,6 +697,7 @@
                         <barButtonItem key="backBarButtonItem" title="Summary" id="oZh-nk-vVT"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="cost" destination="Ja2-cz-7pN" id="C2F-zp-cGh"/>
                         <outlet property="image" destination="zoF-QV-gUG" id="LG4-ek-KVn"/>
                         <outlet property="messageView" destination="p7V-nA-U60" id="sET-kE-s85"/>
                         <outlet property="text" destination="Zhr-br-CLE" id="NAf-fV-bDB"/>
@@ -797,7 +812,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vxg-Qv-b6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1987" y="985"/>
+            <point key="canvasLocation" x="2105" y="741"/>
         </scene>
         <!--Log In View-->
         <scene sceneID="MCP-R2-F4K">
@@ -904,7 +919,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3" y="1095"/>
+            <point key="canvasLocation" x="-435" y="891"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gKZ-G9-fui">
@@ -920,7 +935,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJC-de-xBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175" y="-171"/>
+            <point key="canvasLocation" x="-876" y="241"/>
         </scene>
         <!--Edit Contact-->
         <scene sceneID="wQv-SB-sx7">
@@ -1026,7 +1041,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHt-qs-o41" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2463" y="985"/>
+            <point key="canvasLocation" x="2105" y="1417"/>
         </scene>
     </scenes>
     <resources>
