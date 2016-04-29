@@ -26,12 +26,12 @@ class backPostcard: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func font2(sender: AnyObject) {
-        edit.font = UIFont(name: "SnellRoundhand", size: 15)
+        edit.font = UIFont(name: "BradleyHandITCTT-Bold", size: 15)
     }
     
     
     @IBAction func font3(sender: AnyObject) {
-        edit.font = UIFont(name: "Futura-Medium", size: 15)
+        edit.font = UIFont(name: "HelveticaNeue", size: 15)
     }
     
     

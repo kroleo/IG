@@ -22,6 +22,8 @@ class ConfirmationController: UIViewController{
     }
 
     @IBAction func createAnother(sender: AnyObject) {
+        //Reset global variables
+
         self.navigationController?.popToViewController((self.navigationController?.viewControllers[1])!, animated: false)
     }
 

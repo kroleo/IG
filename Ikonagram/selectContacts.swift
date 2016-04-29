@@ -136,15 +136,16 @@ class selectContacts: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     //--UI Methods--//
-    
     //When a user starts this action, edit mode will be enabled
     @IBAction func startEditMode(sender: AnyObject) {
         self.editContact! = !self.editContact!
         if self.editContact! {
-            self.editButton.setTitle("Editing", forState: UIControlState.Normal)
+            self.editButton.setTitle("Done", forState: UIControlState.Normal)
+            self.editButton.backgroundColor = UIColor(red: 255/255, green: 92/255, blue: 80/255, alpha: 1)
         }
         else{
             self.editButton.setTitle("Edit", forState: UIControlState.Normal)
+            self.editButton.backgroundColor = UIColor(red: 170/255, green: 170/255, blue: 170/255, alpha: 1)
         }
     }
     
