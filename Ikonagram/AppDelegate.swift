@@ -1,4 +1,4 @@
-//
+ //
 //  AppDelegate.swift
 //  Ikonagram
 //
@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import Parse
+import Braintree
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-//    var storyboard : UIStoryboard?;
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -22,29 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         
-        
         let pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
         pageControl.currentPageIndicatorTintColor = UIColor.whiteColor()
         //pageControl.backgroundColor = UIColor.whiteColor()
         
-        
-        
-        Parse.enableLocalDatastore()
-        
-        // Initialize Parse.
-        Parse.setApplicationId("EXeJu2BrcEQuutkcJk1Ds17wyTgXZ03NhXQO0SGj", clientKey: "UcrcedaVS0ido4FyUe8E9seLPCqwF6CkjgdWSGFY")
-        
-        // [Optional] Track statistics around application opens.
-        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
-        
-//        self.storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle());
-//        if PFUser.currentUser() != nil {
-//            self.window?.rootViewController = self.storyboard?.instantiateViewControllerWithIdentifier("frontPostcard");
-//        }
-        
-        
+        BTAppSwitch.setReturnURLScheme("com.kroleo.Ikona.payments")
         return true
+
     }
     
     func applicationWillResignActive(application: UIApplication) {
@@ -69,6 +53,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        if url.scheme.localizedCaseInsensitiveCompare("com.kroleo.Ikona.payments") == .OrderedSame {
+            return BTAppSwitch.handleOpenURL(url, sourceApplication:sourceApplication)
+        }
+        return false
+    }
 }
 

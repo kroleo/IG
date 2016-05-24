@@ -8,33 +8,32 @@
 
 import UIKit
 var previewImage : UIImage?
-class frontPostcard: UIViewController, UIImagePickerControllerDelegate ,UINavigationControllerDelegate{
+class frontPostcard: UIViewController, UIImagePickerControllerDelegate ,UINavigationControllerDelegate, MessageSender{
     
+    var message: String?
     @IBOutlet weak var CollectionView: UIView!
-    
     var CurrentMode :Int = 1
+    var delegate: LoginDelegate?
     enum collectionMode: Int {
         case SingleMode = 1
         case DoubleMode = 2
         case TripleMode = 3
     }
-    var singleimage_view :SingleImageView?
-    var twoImages_View : TwoImagesView?
-    var threeImages_View : ThreeImagesView?
-    var previewImageSize : CGSize!
+    var singleimage_view: SingleImageView?
+    var twoImages_View: TwoImagesView?
+    var threeImages_View: ThreeImagesView?
+    var previewImageSize: CGSize!
+    var user: User?
+    var postcard: Postcard?
+    var previewImage: UIImage?
     
-    @IBAction func toStep2(sender: AnyObject) {
-        
-        UIGraphicsBeginImageContextWithOptions(CGSizeMake(CollectionView.bounds.size.width, CollectionView.bounds.size.height), false, 0);
-        CollectionView.drawViewHierarchyInRect(CGRectMake(0,0,CollectionView.bounds.size.width,CollectionView.bounds.size.height), afterScreenUpdates: true)
-        previewImage = UIGraphicsGetImageFromCurrentImageContext();
-        previewImage = self.scaleImageToSize(previewImageSize, sourceImage: previewImage!)
-        
-    }
-    override func viewDidLoad() {
+        override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.hidesBackButton = true
         previewImageSize = CGSizeMake(861, 528)
         self.addSingleModeView()
+        
+        
     }
     
     @IBAction func btn_one(sender: AnyObject) {
@@ -127,4 +126,49 @@ class frontPostcard: UIViewController, UIImagePickerControllerDelegate ,UINaviga
     }
     
     
+    
+    func addMessage(message: String){
+        self.message = message
+    }
+    
+    
+    //NAVIGATION FUNCTIONS HERE
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "settingsSegue" {
+            let destination = segue.destinationViewController as? SettingsView
+            destination!.user = self.user
+        }
+        if segue.identifier == "backPostcard"{
+            let destination = segue.destinationViewController as? backPostcard
+            destination!.user = self.user
+            self.postcard = Postcard(first: self.previewImage)
+            destination!.postcard = self.postcard
+            destination!.delegate = self
+            if(self.message != nil){
+                print("Parent message is \(self.message)")
+                destination!.myMessage = self.message!
+            }
+        }
+    }
+    
+    @IBAction func toSettings(sender: AnyObject) {
+        performSegueWithIdentifier("settingsSegue", sender: sender)
+    }
+    
+    @IBAction func toStep2(sender: AnyObject) {
+        
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(CollectionView.bounds.size.width, CollectionView.bounds.size.height), false, 0);
+        CollectionView.drawViewHierarchyInRect(CGRectMake(0,0,CollectionView.bounds.size.width,CollectionView.bounds.size.height), afterScreenUpdates: true)
+        previewImage = UIGraphicsGetImageFromCurrentImageContext();
+        previewImage = self.scaleImageToSize(previewImageSize, sourceImage: previewImage!)
+        self.previewImage = previewImage!
+        self.performSegueWithIdentifier("backPostcard", sender: sender)
+        
+    }
+    
+    //When view dissapears reset the username and password fields
+    override func viewDidDisappear(animated: Bool) {
+        delegate!.resetFields()
+    }
+
 }

@@ -7,21 +7,14 @@
 //
 
 import UIKit
-import Parse
+import Security
 
-class LogInView: UIViewController, UITextFieldDelegate {
+class LogInView: UIViewController, UITextFieldDelegate, LoginDelegate {
     @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var invalidLoginLabel: UILabel!
     @IBOutlet weak var passwordField: UITextField!
-    
-//    @IBAction func dimisssKeyboard(sender: UITapGestureRecognizer) {
-//        dismissKeyboard()
-//    }
-//    
-//    // DISMISS KEYBOARD
-//    func dismissKeyboard() {
-//        self.passwordField.resignFirstResponder()
-//        usernameField.resignFirstResponder()
-//    }
+    let MyKeyChainWrapper = KeychainWrapper()
+    var user: User?
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         //dismissKeyboard()
@@ -29,11 +22,36 @@ class LogInView: UIViewController, UITextFieldDelegate {
         return false
     }
     
+    //This IBAction will perform a segue to the sign up page
+    @IBAction func signUp(sender: AnyObject) {
+        performSegueWithIdentifier("toSignUp", sender: sender)
+    }
     
+    //Take user to forgot password screen
+    @IBAction func forgotPassword(sender: AnyObject) {
+        performSegueWithIdentifier("toResetPassword", sender: sender)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.usernameField.autocorrectionType = UITextAutocorrectionType.No
+        self.passwordField.autocorrectionType = UITextAutocorrectionType.No
         usernameField.delegate = self
         passwordField.delegate = self
+        passwordField.secureTextEntry = true
+ 
+        self.invalidLoginLabel.text = ""
+        if NSUserDefaults.standardUserDefaults().boolForKey("signedIn"){
+            self.usernameField.text = NSUserDefaults.standardUserDefaults().objectForKey("username") as? String
+            print("User found")
+            self.passwordField.text = MyKeyChainWrapper.myObjectForKey(kSecValueData) as? String
+            loginAction(self)
+        }
+ 
+        else{
+            print("user not found")
+        }
+        self.hideKeyboardWhenTapped()   
+ 
         // Do any additional setup after loading the view.
     }
     
@@ -42,15 +60,24 @@ class LogInView: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    /*
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
+        if segue.identifier=="toFrontPostcard" {
+            let destination = segue.destinationViewController as? frontPostcard
+            destination!.user = self.user
+            destination!.delegate = self
+        }
+        if segue.identifier == "toSignUp"{
+            let destination = segue.destinationViewController as? SignUpView
+            destination!.delegate = self
+        }
     }
-    */
+
     //Validate Email/Username
     
     func isValidEmail(testStr:String) -> Bool {
@@ -67,48 +94,92 @@ class LogInView: UIViewController, UITextFieldDelegate {
         
     }
     
-    
+    //This will log a user in with the current credentials
     @IBAction func loginAction(sender: AnyObject) {
-        let username = self.usernameField.text
+        let email = self.usernameField.text
         let password = self.passwordField.text
-        
+        let login = AuthenticationOperation(url: NSURL(string:"http://45.55.37.26:3000/ios_login")!)
+        login.logIn(email!, password: password!){ (let loginUser) in
+            //Assign the user to be passed around
+            if loginUser != nil{
+                self.user = loginUser
+                //perform segue on main thread
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in 
+                    /*If the user has not already signed in then save their log in info*/
+                   if !(NSUserDefaults.standardUserDefaults().boolForKey("signedIn")){
+                        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "signedIn")
+                        NSUserDefaults.standardUserDefaults().setObject(self.usernameField.text, forKey: "username")
+                        self.MyKeyChainWrapper.mySetObject(self.passwordField.text, forKey: kSecValueData)
+                        print("User saved")
+                    }
+ 
+                    //Else get their credentials and log in
+                    self.performSegueWithIdentifier("toFrontPostcard", sender: sender)
+                })
+            }
+            else{
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.invalidLoginLabel.text = "Failed Login"
+                })
+            }
+        }
         //Validate Email which is username
-        if isValidEmail(usernameField.text!)
-        {
-            print("Valid EmailID")
-            
-            // Run a spinner to show a task in progress
-            let spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
-            spinner.startAnimating()
-            
-            // Send a request to login
-            PFUser.logInWithUsernameInBackground(username!, password: password!, block: { (user, error) -> Void in
                 
-                // Stop the spinner
-                spinner.stopAnimating()
-                
-                if ((user) != nil) {
-                    let alert = UIAlertView(title: "Success", message: "Logged In", delegate: self, cancelButtonTitle: "OK")
-                    alert.show()
-                    
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("navController")
-                        self.presentViewController(viewController, animated: true, completion: nil)
-                    })
-                    
-                } else {
-                    let alert = UIAlertView(title: "Error", message: "Invalid username or password", delegate: self, cancelButtonTitle: "OK")
-                    alert.show()
-                }
-            })
-        }
-        else
-        {
-            print("Invalid EmailID")
-            let alert = UIAlertView(title: "Invalid Email", message: "Please type a valid email", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
-        }
-        
+    }
+    
+    
+    //--DELEGATE METHODS--//
+    
+    //This will clear out the username and password fields
+    func resetFields(){
+        self.usernameField.text = ""
+        self.passwordField.text = ""
+        self.invalidLoginLabel.text = ""
+    }
+    
+    
+    
+    
+    //This will set the login fields
+    func setFields(username: String, password: String){
+        self.usernameField.text = username
+        self.passwordField.text = password
+        self.invalidLoginLabel.text = ""
     }
     
 }
+
+/*
+ Use this extension to dismiss keyboard on tap
+ for all UIViewControllers in this app
+ */
+extension UIViewController{
+    
+    /*
+    This function can be called in viewdidload to 
+     stop editing upon tap for keyboards
+    */
+    func hideKeyboardWhenTapped(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    /*
+     This function actually modifies the view to end editing upon tap
+    */
+    func dismissKeyboard(){
+        view.endEditing(true)
+    }
+    
+    
+    /*
+     This function will allow the tap gesture recognizer to be added to many different 
+     Text fields
+    */
+    func addGestureToFields(gesture: UIGestureRecognizer, fields: [UITextField]){
+        for field in fields {
+            field.addGestureRecognizer(gesture)
+        }
+    }
+}
+

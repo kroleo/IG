@@ -51,10 +51,10 @@ class CustomeScrollView: UIScrollView ,UIScrollViewDelegate,UINavigationControll
     func setImageInScrollView (selectedImage:UIImage)
     {
         self.ImageView = UIImageView(image: selectedImage)
-        self.ImageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        self.ImageView?.contentMode = UIViewContentMode.ScaleToFill
         self.addSubview(self.ImageView!)
         self.bringSubviewToFront(self.ImageView!)
-        self.contentMode=UIViewContentMode.ScaleAspectFit
+        self.contentMode=UIViewContentMode.ScaleToFill
         self.ImageView!.sizeToFit()
         self.ImageView!.frame = self.bounds
     }

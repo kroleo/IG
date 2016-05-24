@@ -20,6 +20,7 @@ class SingleImageView: UIView,UIImagePickerControllerDelegate,UINavigationContro
     }
     func addImageButtonTap ()
     {
+        
         if self.imageview.ImageView != nil {
             self.showWarninigAlertIfImageAlreadyExist(1)
         }else{
@@ -40,7 +41,10 @@ class SingleImageView: UIView,UIImagePickerControllerDelegate,UINavigationContro
     }
 
     func showImageAddingAlert()
+        
     {
+        
+        
         let alert:UIAlertController! = UIAlertController(title: "Add Photo", message: "Please select an action", preferredStyle: UIAlertControllerStyle.Alert)
         let capturePhotAction :UIAlertAction = UIAlertAction(title: "Capture Photo", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
             self.loadImagePicker(true)
@@ -54,7 +58,22 @@ class SingleImageView: UIView,UIImagePickerControllerDelegate,UINavigationContro
         alert.addAction(capturePhotAction)
         alert.addAction(attachPhotoAction)
         alert.addAction(CancelAction)
-        UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+        let rootViewController = self.window?.rootViewController    
+        rootViewController!.presentViewController(alert,animated:false,completion:nil)
+
+    }
+    
+    func getCurrentViewController() -> UIViewController? {
+        
+        if let rootController = UIApplication.sharedApplication().keyWindow?.rootViewController {
+            var currentController: UIViewController! = rootController
+            while( currentController.presentedViewController != nil ) {
+                currentController = currentController.presentedViewController
+            }
+            return currentController
+        }
+        return nil
+        
     }
     
     func loadImagePicker(isLoadFromCamera : Bool)

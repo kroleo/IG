@@ -1,7 +1,7 @@
 
 import Foundation
 import UIKit
-import Parse
+
 
 
 // APP NAME (Change it accordingly to the name you'll give to this app)

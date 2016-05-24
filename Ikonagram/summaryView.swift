@@ -7,138 +7,113 @@
 //
 
 import UIKit
-import Parse
+import Braintree
 
-class summaryView: UIViewController, PayPalPaymentDelegate{
-    
+class summaryView: UIViewController, BTDropInViewControllerDelegate {
+    var braintreeClient: BTAPIClient?
     @IBOutlet weak var image: UIImageView!
-    
-    @IBOutlet weak var text: UILabel!
+    @IBOutlet weak var cost: UILabel!
 
+    @IBOutlet weak var messageView: UIView!
+    @IBOutlet weak var text: UILabel!
     
-    var payPalConfig = PayPalConfiguration()
-    
-    var environment:String = PayPalEnvironmentNoNetwork {
-        willSet(newEnvironment) {
-            if (newEnvironment != environment) {
-                PayPalMobile.preconnectWithEnvironment(newEnvironment)
-            }
-        }
-    }
-    
-    var acceptCreditCards: Bool = true {
-        didSet {
-            payPalConfig.acceptCreditCards = acceptCreditCards
-        }
-    }
-    
+    var theImage: UIImage?
+    var messageImage: UIImage?
+    var finalText: String?
+    var postcard: Postcard?
+    var user: User?
+    var contacts: [Contact]?
+    var userDidCancel: Bool = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        PayPalMobile.initializeWithClientIdsForEnvironments([PayPalEnvironmentProduction: "abc", PayPalEnvironmentSandbox: "xyz"])
-
-        // Do any additional setup after loading the view.
-        
-        self.image.image = previewImage
-//        self.image.sizeToFit()
-        self.text.text = final_text
-/*
-        payPalConfig.acceptCreditCards = acceptCreditCards;
-        payPalConfig.merchantName = "Kroleo Studios Inc."
-        payPalConfig.merchantPrivacyPolicyURL = NSURL(string: "https://www.sivaganesh.com/privacy.html")
-        payPalConfig.merchantUserAgreementURL = NSURL(string: "https://www.sivaganesh.com/useragreement.html")
-        payPalConfig.languageOrLocale = NSLocale.preferredLanguages()[0]
-        payPalConfig.payPalShippingAddressOption = .PayPal;
-        
-        PayPalMobile.preconnectWithEnvironment(environment)
-        
-        */
+        text.text = self.postcard?.message
+        text.font = self.postcard?.font
+        image.image = self.postcard?.image
+        let urlString = "http://45.55.37.26:3000/client_token"
+        let clientTokenOperation = AuthenticationOperation(url: NSURL(string: urlString)!)
+        clientTokenOperation.getClientToken(){ (let token) in
+            print(token)
+            self.braintreeClient = BTAPIClient(authorization: token)
+        }
+        let costString = String(3*self.contacts!.count)
+        cost.text = "$\(costString)"
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    func payPalPaymentDidCancel(paymentViewController: PayPalPaymentViewController!) {
-        print("PayPal Payment Cancelled")
-        paymentViewController?.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func payPalPaymentViewController(paymentViewController: PayPalPaymentViewController!, didCompletePayment completedPayment: PayPalPayment!) {
-        
-        print("PayPal Payment Success !")
-        paymentViewController?.dismissViewControllerAnimated(true, completion: { () -> Void in
-            // send completed confirmaion to your server
-            print("Here is your proof of payment:\n\n\(completedPayment.confirmation)\n\nSend this to your server for confirmation and fulfillment.")
-        })
-    }
     
     
     @IBAction func pay(sender: UIButton) {
+        // If you haven't already, create and retain a `BTAPIClient` instance with a
+        // tokenization key OR a client token from your server.
+        // Typically, you only need to do this once per session.
         
-            let cardsClass = PFObject(className: "Cards")
-            cardsClass["message"] = final_text
+        // Create a BTDropInViewController
+        let dropInViewController = BTDropInViewController(APIClient: braintreeClient!)
+        dropInViewController.delegate = self
         
-        if previewImage != nil {
-            let imageData = UIImageJPEGRepresentation(previewImage!, 0.5)
-            let imageFile = PFFile(name:"image.jpg", data:imageData!)
-            cardsClass["picture1"] = imageFile
-            
-            
-            cardsClass.saveInBackgroundWithBlock { (success, error) -> Void in
-                if error == nil {
-                    //self.view.hideHUD()
-                    //self.openMailVC()
-                    // will send as message
-                } else {
-                    let alert = UIAlertView(title: APP_NAME,
-                        message: "\(error!.localizedDescription)",
-                        delegate: nil,
-                        cancelButtonTitle: "OK" )
-                    alert.show()
-                    //self.view.hideHUD()
-                } }
+        // This is where you might want to customize your view controller (see below)
+        
+        // The way you present your BTDropInViewController instance is up to you.
+        // In this example, we wrap it in a new, modally-presented navigation controller:
+        dropInViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: UIBarButtonSystemItem.Cancel,
+            target: self, action: "PaymentController.userDidCancelPayment")
+        let navigationController = UINavigationController(rootViewController: dropInViewController)
+        presentViewController(navigationController, animated: true, completion: nil)
+        
+        let picturePost = AuthenticationOperation(url: NSURL(string:"http://45.55.37.26:3000/ios_post_photo")!)
+        var contactIds: [Int] = []
+        if let contactList = self.contacts{
+            for i in contactList{
+                contactIds.append(i.id!)
+            }
         }
-
-        
-        
-        
-        
-        
-        
-        
-/*
-        // Process Payment once the pay button is clicked.
-        
-        let item1 = PayPalItem(name: "Postcard", withQuantity: 1, withPrice: NSDecimalNumber(string: "5.99"), withCurrency: "USD", withSku: "0001")
-        
-        let items = [item1]
-        let subtotal = PayPalItem.totalPriceForItems(items)
-        
-        // Optional: include payment details
-        let shipping = NSDecimalNumber(string: "0.00")
-        let tax = NSDecimalNumber(string: "0.00")
-        let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
-        
-        let total = subtotal.decimalNumberByAdding(shipping).decimalNumberByAdding(tax)
-        
-        let payment = PayPalPayment(amount: total, currencyCode: "USD", shortDescription: "Medium Size Postcard", intent: .Sale)
-        
-        payment.items = items
-        payment.paymentDetails = paymentDetails
-        
-        if (payment.processable) {
-            
-            let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: payPalConfig, delegate: self)
-            presentViewController(paymentViewController!, animated: true, completion: nil)
+        print(contactIds)
+        if !(self.userDidCancel){
+            picturePost.postPhoto((self.postcard?.image!)!, user: self.user!,message: self.postcard!.message!)
+            self.performSegueWithIdentifier("toConfirmation", sender: sender)
         }
-        else {
-            
-            print("Payment not processalbe: \(payment)")
+        else{
+            print("User backed out")
         }
-*/
+    }
+    
+    /*
+    Methods for the braintree stuff go down here*/
+    
+    func userDidCancelPayment() {
+        print("User cancelled")
+        self.userDidCancel = true
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func dropInViewController(viewController: BTDropInViewController,
+                              didSucceedWithTokenization paymentMethodNonce: BTPaymentMethodNonce)
+    {
+        // Send payment method nonce to your server for processing
+        postNonceToServer(paymentMethodNonce.nonce)
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func dropInViewControllerDidCancel(viewController: BTDropInViewController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func postNonceToServer(paymentMethodNonce: String) {
+        let paymentURL = NSURL(string: "http://45.55.37.26:3000/checkout")!
+        let request = NSMutableURLRequest(URL: paymentURL)
+        request.HTTPBody = "payment_method_nonce=\(paymentMethodNonce)".dataUsingEncoding(NSUTF8StringEncoding)
+        request.HTTPMethod = "POST"
+        
+        NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in
+            // TODO: Handle success or failure
+            }.resume()
     }
 
-
 }
+
+
