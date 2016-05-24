@@ -43,7 +43,7 @@ class EditContacts: UIViewController, EditContactDelegate{
         self.state.text = self.contact!.state
         self.zip.text = self.contact!.zip
         self.nation.text = self.contact!.nation
-        
+        self.hideKeyboardWhenTapped()
     }
     
     //This will submit the user to be saved

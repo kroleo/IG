@@ -194,39 +194,25 @@
 		63C69DD11C7D039800556765 /* Ikonagram */ = {
 			isa = PBXGroup;
 			children = (
+				B6C34EFD1CF16A220040B6A4 /* Delegates */,
+				B6C34EFC1CF169DF0040B6A4 /* Controllers */,
 				63C69E301C7EB93A00556765 /* SingleImageView.xib */,
-				B6F9CF801CAE36DA004C2DC6 /* NetworkOperation.swift */,
 				63C69E311C7EB93A00556765 /* ThreeImagesView.xib */,
 				63C69E321C7EB93A00556765 /* TwoImagesView.xib */,
 				63C69E331C7EB93A00556765 /* CustomeScrollView.swift */,
 				63C69E341C7EB93A00556765 /* Ikonagram-Bridging-Header.h */,
 				63C69E5A1C7ED1EC00556765 /* ZZAppDelegate.h */,
 				63C69E351C7EB93A00556765 /* SingleImageView.swift */,
-				B6B463D91CCF1E920011EA83 /* EditContactDelegate.swift */,
 				63C69E361C7EB93A00556765 /* ThreeImagesView.swift */,
 				63C69E371C7EB93A00556765 /* TwoImagesView.swift */,
-				63C69DD21C7D039800556765 /* AppDelegate.swift */,
-				63C69E011C7E171000556765 /* frontPostcard.swift */,
 				630EDC3F1CCFDCA700F0BC7A /* KeychainWrapper.h */,
 				630EDC401CCFDCA700F0BC7A /* KeychainWrapper.m */,
 				63C69E0D1C7E217E00556765 /* configs.swift */,
-				63C69E031C7E178200556765 /* backPostcard.swift */,
-				63C69E051C7E17A400556765 /* selectContacts.swift */,
-				63C69E071C7E17B300556765 /* addContacts.swift */,
-				B6B463D71CCF1B790011EA83 /* EditContacts.swift */,
-				63C69E091C7E17F800556765 /* summaryView.swift */,
 				63C69E0B1C7E181A00556765 /* SplashViews */,
-				63C69E0C1C7E197000556765 /* LoginManagement */,
 				63C69DDB1C7D039800556765 /* LaunchScreen.storyboard */,
+				B6C34EFB1CF169BB0040B6A4 /* Models */,
 				63C69DDE1C7D039800556765 /* Info.plist */,
 				B6F9CF841CB0290C004C2DC6 /* Main.storyboard */,
-				B60CDCC61CC137500086B730 /* PaymentController.swift */,
-				B6F9CF861CB051D5004C2DC6 /* User.swift */,
-				B6B463D31CC9EA890011EA83 /* ConfirmationController.swift */,
-				B60CDCC81CC1489C0086B730 /* Contact.swift */,
-				B60CDCC41CBE0B190086B730 /* Postcard.swift */,
-				B6B463D11CC9D3920011EA83 /* messageDelegate.swift */,
-				B6B463D51CCF0CEB0011EA83 /* LoginDelegate.swift */,
 			);
 			path = Ikonagram;
 			sourceTree = "<group>";
@@ -285,18 +271,6 @@
 			name = SplashViews;
 			sourceTree = "<group>";
 		};
-		63C69E0C1C7E197000556765 /* LoginManagement */ = {
-			isa = PBXGroup;
-			children = (
-				63C69DF91C7D871F00556765 /* LogInView.swift */,
-				B6F9CF821CAE37BE004C2DC6 /* AuthenticationOperation.swift */,
-				63C69DFB1C7D872F00556765 /* SignUpView.swift */,
-				63C69DFD1C7D873F00556765 /* SettingsView.swift */,
-				63C69DFF1C7D874F00556765 /* ResetPasswordView.swift */,
-			);
-			name = LoginManagement;
-			sourceTree = "<group>";
-		};
 		8E145D6256F2D5F037503717 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +278,48 @@
 				17394131A1B9ED164F3D89F2 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B6C34EFB1CF169BB0040B6A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B6F9CF861CB051D5004C2DC6 /* User.swift */,
+				B6F9CF801CAE36DA004C2DC6 /* NetworkOperation.swift */,
+				B6F9CF821CAE37BE004C2DC6 /* AuthenticationOperation.swift */,
+				B60CDCC81CC1489C0086B730 /* Contact.swift */,
+				B60CDCC41CBE0B190086B730 /* Postcard.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B6C34EFC1CF169DF0040B6A4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B60CDCC61CC137500086B730 /* PaymentController.swift */,
+				63C69DFD1C7D873F00556765 /* SettingsView.swift */,
+				63C69DFB1C7D872F00556765 /* SignUpView.swift */,
+				63C69E051C7E17A400556765 /* selectContacts.swift */,
+				63C69E031C7E178200556765 /* backPostcard.swift */,
+				63C69E011C7E171000556765 /* frontPostcard.swift */,
+				63C69E091C7E17F800556765 /* summaryView.swift */,
+				B6B463D71CCF1B790011EA83 /* EditContacts.swift */,
+				63C69E071C7E17B300556765 /* addContacts.swift */,
+				63C69DF91C7D871F00556765 /* LogInView.swift */,
+				63C69DFF1C7D874F00556765 /* ResetPasswordView.swift */,
+				B6B463D31CC9EA890011EA83 /* ConfirmationController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B6C34EFD1CF16A220040B6A4 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				B6B463D11CC9D3920011EA83 /* messageDelegate.swift */,
+				B6B463D91CCF1E920011EA83 /* EditContactDelegate.swift */,
+				B6B463D51CCF0CEB0011EA83 /* LoginDelegate.swift */,
+				63C69DD21C7D039800556765 /* AppDelegate.swift */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

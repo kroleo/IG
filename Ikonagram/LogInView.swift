@@ -15,17 +15,6 @@ class LogInView: UIViewController, UITextFieldDelegate, LoginDelegate {
     @IBOutlet weak var passwordField: UITextField!
     let MyKeyChainWrapper = KeychainWrapper()
     var user: User?
-    
-    
-//    @IBAction func dimisssKeyboard(sender: UITapGestureRecognizer) {
-//        dismissKeyboard()
-//    }
-//    
-//    // DISMISS KEYBOARD
-//    func dismissKeyboard() {
-//        self.passwordField.resignFirstResponder()
-//        usernameField.resignFirstResponder()
-//    }
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         //dismissKeyboard()
@@ -61,6 +50,7 @@ class LogInView: UIViewController, UITextFieldDelegate, LoginDelegate {
         else{
             print("user not found")
         }
+        self.hideKeyboardWhenTapped()   
  
         // Do any additional setup after loading the view.
     }
@@ -158,3 +148,38 @@ class LogInView: UIViewController, UITextFieldDelegate, LoginDelegate {
     }
     
 }
+
+/*
+ Use this extension to dismiss keyboard on tap
+ for all UIViewControllers in this app
+ */
+extension UIViewController{
+    
+    /*
+    This function can be called in viewdidload to 
+     stop editing upon tap for keyboards
+    */
+    func hideKeyboardWhenTapped(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    /*
+     This function actually modifies the view to end editing upon tap
+    */
+    func dismissKeyboard(){
+        view.endEditing(true)
+    }
+    
+    
+    /*
+     This function will allow the tap gesture recognizer to be added to many different 
+     Text fields
+    */
+    func addGestureToFields(gesture: UIGestureRecognizer, fields: [UITextField]){
+        for field in fields {
+            field.addGestureRecognizer(gesture)
+        }
+    }
+}
+

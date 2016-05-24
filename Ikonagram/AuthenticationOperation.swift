@@ -11,6 +11,8 @@ import UIKit
 /*
 This class will be used for authentication posts
 This will allow for creation of new users and objects in the database
+ This will basically model all our network operations
+ NEEDS REFACTORING SEND HELP PLS
 */
 class AuthenticationOperation: NetWorkOperation{
     //This function handles sign ups

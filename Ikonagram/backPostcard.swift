@@ -9,17 +9,20 @@
 
 import UIKit
 var final_text: String!
+
+/*
+This class will be used to manage the back of postcard scene
+ */
 class backPostcard: UIViewController, UITextFieldDelegate {
-    
+    //--INSTANCE VARIABLES--//
     @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var edit: UITextField!
     var delegate: MessageSender?
     var image: UIImage?
     var myMessage: String?
-    
     var user: User?
     var postcard: Postcard?
-    
+     @IBOutlet weak var message: UILabel!
     /*These IBActions will change the font being used to edit*/
     @IBAction func font1(sender: UIButton) {
         edit.font = UIFont(name:"ChalkboardSE-Regular", size: 15)
@@ -33,9 +36,10 @@ class backPostcard: UIViewController, UITextFieldDelegate {
     @IBAction func font3(sender: AnyObject) {
         edit.font = UIFont(name: "HelveticaNeue", size: 15)
     }
-    
-    
-    @IBOutlet weak var message: UILabel!
+   
+    /*
+     Run this method upon loading of page
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         if let theUser = user {
@@ -44,17 +48,17 @@ class backPostcard: UIViewController, UITextFieldDelegate {
             dispatch_async(dispatch_get_main_queue(),{
                 self.user!.add_contacts(contacts)
             })
-        }
-        }
-        else{
-            print("No user")
+            }
         }
         if let msg = self.myMessage{
             self.edit.text = msg
         }
-        self.edit.delegate = self;
+        self.edit.delegate = self
+        self.hideKeyboardWhenTapped()
     }
     
+    
+   
     @IBAction func editor(sender: UITextField) {
         self.message.text = sender.text
     }
@@ -65,13 +69,6 @@ class backPostcard: UIViewController, UITextFieldDelegate {
         return false
     }
     
-  //func textFieldDidBeginEditing(textField: UITextField) {
-    //        scrollview.setContentOffset(CGPointMake(0, 200), animated: true)
-    //}
-//    
- //   func textFieldDidEndEditing(textField: UITextField) {
-   //     scrollview.setContentOffset(CGPointMake(0, 0), animated: true)
-   // }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)

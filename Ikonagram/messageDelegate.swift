@@ -7,7 +7,12 @@
 //
 
 import Foundation
-
+/*
+ This delegate will serve as a way to
+ 
+ */
 protocol MessageDelegate {
+    
     func messageSent(message: String)
+    
 }

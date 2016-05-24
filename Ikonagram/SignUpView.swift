@@ -44,6 +44,7 @@ class SignUpView: UIViewController, UITextFieldDelegate {
         self.passwordField.autocorrectionType = UITextAutocorrectionType.No
         self.failedSignUp.text = ""
         // Do any additional setup after loading the view.
+        self.hideKeyboardWhenTapped()
     }
     
     override func didReceiveMemoryWarning() {
